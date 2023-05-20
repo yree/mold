@@ -75,6 +75,16 @@ Now a table:
 
 Logo of *no style, please!* theme[^4]
 
+## Mathjax
+
+Inline mathjax : $$a^2 + b^2 = c^2$$
+
+Mathjax:
+
+$$
+a^2 + b^2 = c^2
+$$
+
 ---
 {: data-content="footnotes"}
 
