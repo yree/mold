@@ -1,5 +1,3 @@
----
-layout: home
----
+# Hello World!
 
-Hello World!
+This is the mold theme.
