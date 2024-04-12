@@ -1,4 +1,4 @@
-# mold 📝
+# mold ✒️
 
 **M**inimal **O**ptimized **L**ightweight **D**esign for Github Pages
 
@@ -24,9 +24,9 @@ remote-theme: 8hantanu/mold
 
 ## Organization 📂
 - The theme operates on the WYWIWYS (wee-wee-wiz) principle
-- The `README.md` at the repo root acts as the index for the GitHub Pages
+- The `README.md` at the repo root acts as the index for the GitHub Page
 - To create posts add `.md` files and folders in the same repo
--Link these `.md` files across each other (refer to this repo structure).
+- Link these `.md` files across each other (refer to this repo structure).
 
 ## Pro tips 💡
 ### Site Settings
