@@ -5,7 +5,8 @@
 Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-please).
 
 ## Features
-- Fast 
+- A WYWIWYS theme (What You Write Is What You See)
+- Fast
 - Light, dark, and auto modes
 - Responsive
 - Content-first (typography optimized for maximum readability)
@@ -22,9 +23,10 @@ remote-theme: 8hantanu/mold
 - Edit `_config.yml` file to further customize your blog.
 
 ## Organization
-- The `README.md` at the repo root acts as the index for the GitHub Pages. 
+- The theme operates on the WYWIWYS (wee-wee-wiz) principle
+- The `README.md` at the repo root acts as the index for the GitHub Pages
 - To create posts add `.md` files and folders in the same repo
-- Link these `.md` across each other (refer this repo structure)
+-Link these `.md` files across each other (refer to this repo structure).
 
 ## Pro tips
 ### Site Settings
