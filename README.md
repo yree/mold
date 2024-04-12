@@ -2,7 +2,7 @@
 
 **M**inimal **O**ptimized **L**ightweight **D**esign for Github Pages
 
-Inspired from [riggrazz/no-style-please](https://github.com/riggrazz/no-style-please).
+Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-please).
 
 ## Features
 - Fast 
@@ -11,22 +11,24 @@ Inspired from [riggrazz/no-style-please](https://github.com/riggrazz/no-style-pl
 - Content-first (typography optimized for maximum readability)
 - SEO optimized (uses Jekyll SEO Tag)
 - RSS feed (uses Jekyll Feed)
-- Fully compatible with GitHub Pages 
+- Made for GitHub Pages
 
 ## Usage
-If you want to use this theme for your Jekyll site deployed on GitHub Pages, follow the instructions on this page.
-
-Just add the following to your `_config.yml`:
+- Setup your github pages repo
+- To your `_config.yml`, add:
 ```yaml
 remote-theme: 8hantanu/mold
 ```
-
-You can edit `_config.yml` file to customize your blog. You can change things such as the name of the blog, the author, the appearance of the theme (light, dark, or auto), how dates are formatted, etc. Customizable fields should be straightforward to understand. Still, `_config.yml` contains some comments to help you understand what each field does.
+- Edit `_config.yml` file to further customize your blog.
 
 ## Organization
-The `README.md` at the root acts as the index for the GitHub Pages. Create further `.md` files and folders in the same repo, and just link it across the pages created. See this repo structure for example.
+- The `README.md` at the repo root acts as the index for the GitHub Pages. 
+- To create posts add `.md` files and folders in the same repo
+- Link these `.md` across each other (refer this repo structure)
 
 ## Pro tips
+### Site Settings
+You can change things such as the name of the blog, the author, the appearance of the theme (light, dark, or auto), how dates are formatted, etc. Customizable fields should be straightforward to understand. Still, `_config.yml` contains some comments to help you understand what each field does.
 ### Dark mode for images
 This theme provides dark mode by inverting all colors of the light mode through the CSS `invert()` function. This approach would also invert the color of all images, but, since this is not the behavior one would expect, images are not inverted by default.
 
