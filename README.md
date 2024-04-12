@@ -1,4 +1,4 @@
-# mold ✒️
+# mold 🍄
 
 **M**inimal **O**ptimized **L**ightweight **D**esign for Github Pages
 
