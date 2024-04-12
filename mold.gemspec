@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["dev@8hantanu.net"]
 
   spec.summary       = "A minimal, optimized, lightweight design for static sites."
-  spec.homepage      = "https://github.com/8hantanu/mold"
+  spec.homepage      = "https://github.com/yree/mold"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_includes|_sass|LICENSE|README|_config\.yml)!i) }

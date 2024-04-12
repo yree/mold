@@ -18,7 +18,7 @@ Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-plea
 - Setup your github pages repo
 - To your `_config.yml`, add:
 ```yaml
-remote-theme: 8hantanu/mold
+remote-theme: yree/mold
 ```
 - Edit `_config.yml` file to further customize your blog.
 
@@ -39,7 +39,7 @@ However, if you would like to force the color inversion on a specific image, you
 For example, if you have a black and white image, it could make sense to invert it in dark mode. On the other hand, a colorful image will probably look bad if inverted.
 
 ## Contributing 🤝
-Bug reports and pull requests are welcome on GitHub at [8hantanu/mold](https://github.com/8hantanu/mold). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+Bug reports and pull requests are welcome on GitHub at [yree/mold](https://github.com/yree/mold). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 ## Development (TODO) 🚧
 To set up your environment to develop this theme, run `bundle install`.
