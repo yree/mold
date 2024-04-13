@@ -1,9 +1,9 @@
 // -------------- THEME SWITCHER -------------- //
 @mixin dark-appearance {
-  *:not(img,body,li,h1,h2,h3,h4,h5,h6) {
+  *:not(img,li,h1,h2,h3,h4,h5,h6) {
     filter: invert(1);
   }
-  body,li,h1,h2,h3,h4,h5,h6 {
+  li,h1,h2,h3,h4,h5,h6 {
     color: white;
   }
   img {
