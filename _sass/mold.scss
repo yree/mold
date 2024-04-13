@@ -100,23 +100,23 @@ a:hover {
   text-decoration: underline;
 }
 
-blockquote > p:contains("[!NOTE]") {
-  font-weight: bold; // Make the "note" type bold
-  color: blue; // Change color as desired
+// Specific styles for different blockquote types
+blockquote[role="note"] {
+  background-color: #f0f8ff; // Light blue for notes
 }
 
-blockquote > p:contains("[!TIP]") {
-  color: green; // Change color as desired
+blockquote[role="tip"] {
+  background-color: #e6ffe6; // Light green for tips
 }
 
-blockquote > p:contains("[!IMPORTANT]") {
-  color: red; // Change color as desired
+blockquote[role="important"] {
+  background-color: #ffe6e6; // Light red for important info
 }
 
-blockquote > p:contains("[!WARNING]") {
-  color: orange; // Change color as desired
+blockquote[role="warning"] {
+  background-color: #ffcc99; // Light orange for warnings
 }
 
-blockquote > p:contains("[!CAUTION]") {
-  color: purple; // Change color as desired
+blockquote[role="caution"] {
+  background-color: #ffffcc; // Light yellow for cautions
 }
