@@ -100,51 +100,22 @@ a:hover {
   text-decoration: underline;
 }
 
-// Define variables for colors
-$note-color: #3498db;       // Blue
-$tip-color: #2ecc71;        // Green
-$important-color: #e74c3c;  // Red
-$warning-color: #f39c12;    // Yellow
-$caution-color: #9b59b6;    // Purple
-
-// Define a mixin to apply the color based on the type of note
-@mixin note-color($type) {
-  @if $type == 'NOTE' {
-    background-color: $note-color;
-  } @else if $type == 'TIP' {
-    background-color: $tip-color;
-  } @else if $type == 'IMPORTANT' {
-    background-color: $important-color;
-  } @else if $type == 'WARNING' {
-    background-color: $warning-color;
-  } @else if $type == 'CAUTION' {
-    background-color: $caution-color;
-  }
+blockquote:has(> [!NOTE]) {
+  color: blue; // Change color as desired
 }
 
-// Define styles for each type of note
-.note, .tip, .important, .warning, .caution {
-  padding: 10px;
-  border-radius: 5px;
-  margin-bottom: 10px;
+blockquote:has(> [!TIP]) {
+  color: green; // Change color as desired
 }
 
-.note {
-  @include note-color('NOTE'); // Apply the color for NOTE type
+blockquote:has(> [!IMPORTANT]) {
+  color: red; // Change color as desired
 }
 
-.tip {
-  @include note-color('TIP'); // Apply the color for TIP type
+blockquote:has(> [!WARNING]) {
+  color: orange; // Change color as desired
 }
 
-.important {
-  @include note-color('IMPORTANT'); // Apply the color for IMPORTANT type
-}
-
-.warning {
-  @include note-color('WARNING'); // Apply the color for WARNING type
-}
-
-.caution {
-  @include note-color('CAUTION'); // Apply the color for CAUTION type
+blockquote:has(> [!CAUTION]) {
+  color: purple; // Change color as desired
 }
