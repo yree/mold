@@ -100,22 +100,23 @@ a:hover {
   text-decoration: underline;
 }
 
-blockquote:has(> [!NOTE]) {
+blockquote > p:contains("[!NOTE]") {
+  font-weight: bold; // Make the "note" type bold
   color: blue; // Change color as desired
 }
 
-blockquote:has(> [!TIP]) {
+blockquote > p:contains("[!TIP]") {
   color: green; // Change color as desired
 }
 
-blockquote:has(> [!IMPORTANT]) {
+blockquote > p:contains("[!IMPORTANT]") {
   color: red; // Change color as desired
 }
 
-blockquote:has(> [!WARNING]) {
+blockquote > p:contains("[!WARNING]") {
   color: orange; // Change color as desired
 }
 
-blockquote:has(> [!CAUTION]) {
+blockquote > p:contains("[!CAUTION]") {
   color: purple; // Change color as desired
 }
