@@ -50,6 +50,8 @@ Moon
 ## Block Quote
 
 > This line shows the _block quote_.
+>
+> -- **author**
 
 ## Tables
 
