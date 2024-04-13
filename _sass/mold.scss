@@ -79,9 +79,9 @@ div.highlighter-rouge code {
 }
 
 blockquote {
-  font-style: italic;
-  border: thin solid black;
+  border-left: thin solid black;
   padding: 1rem;
+  margin: 0;
 
   p { margin: 0; }
 }
