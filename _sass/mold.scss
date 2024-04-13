@@ -1,8 +1,8 @@
 // -------------- THEME SWITCHER -------------- //
 @mixin dark-appearance {
   filter: invert(1);
-  h1, h2, h3, h4, h5, h6, body, p, li {
-    filter: invert(1);
+  h1, h2, h3, h4, h5, h6, p, li, span, div, a:not(.button) {
+    // filter: invert(1);
     color: white;
   }
   img {
