@@ -2,7 +2,7 @@
 @mixin dark-appearance {
   filter: invert(1);
   .emojis {
-    filter: invert(1);
+    filter: invert(0);
   }
   img {
     filter: invert(1);
