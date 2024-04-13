@@ -94,3 +94,10 @@ img {
   display: block;
   margin: 0 auto;
 }
+
+a {
+  color: #0077ff;
+  &:visited{
+    color: #A000A0;
+  }
+}
