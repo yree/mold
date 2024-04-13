@@ -3,8 +3,9 @@
   filter: invert(1);
   img {
     filter: invert(1);
-
-    &.ioda { filter: invert(0); }
+    &.ioda {
+      filter: invert(0);
+    }
   }
 }
 
@@ -90,4 +91,12 @@ img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+  &:hover {
+    text-decoration: underline;
+  }
 }
