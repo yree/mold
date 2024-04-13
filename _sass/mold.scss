@@ -1,8 +1,13 @@
 // -------------- THEME SWITCHER -------------- //
 @mixin dark-appearance {
   filter: invert(1);
-  &:not([aria-role="img"]) {
-    filter: invert(0); // Reset inversion for everything except emojis
+  body {
+    filter: invert(1);
+    color: white;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    filter: invert(1);
+    color: white;
   }
   img {
     filter: invert(1);
