@@ -1,12 +1,8 @@
 // -------------- THEME SWITCHER -------------- //
 @mixin dark-appearance {
-  *:not(img,li,h1,h2,h3,h4,h5,h6) {
-    filter: invert(1);
-  }
-  li,h1,h2,h3,h4,h5,h6 {
-    color: white;
-  }
+  filter: invert(1);
   img {
+    filter: invert(1);
     &.ioda { filter: invert(0); }
   }
 }
@@ -72,7 +68,7 @@ table, th, td {
 
 code {
   color: black;
-  background: whitesmoke;
+  background: lightgrey;
 }
 
 div.highlighter-rouge code {
@@ -85,6 +81,7 @@ blockquote {
   border-left: thin solid black;
   padding: 1rem;
   margin: 0;
+
   p { margin: 0; }
 }
 
@@ -92,4 +89,13 @@ img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--links);
+}
+
+a:hover {
+  text-decoration: underline;
 }
