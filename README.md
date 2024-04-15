@@ -5,16 +5,18 @@
 Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-please).
 
 ## Features ✨
-- A WYWIWYS theme (What You Write Is What You See) 👀
-- Fast ⚡️
-- Light, dark, and auto modes 🌞🌚
-- Responsive 📱
-- Content-first (typography optimized for maximum readability) 📖
-- SEO optimized (uses Jekyll SEO Tag) 🔍
-- RSS feed (uses Jekyll Feed) 📰
-- Made for GitHub Pages 🚀
+- 👀 A WYWIWYS theme (What You Write Is What You See)
+- ⚡️ Fast
+- 🌓 Light, dark, and auto themes
+- 📱 Responsive
+- 📖 Content-first (typography optimized for maximum readability)
+- 🔍 SEO optimized (uses Jekyll SEO Tag)
+- 📰 RSS feed (uses Jekyll Feed)
+- 🚀 Made for GitHub Pages
 
 ## Usage 🛠
+
+### Initial Setup 🏗️
 - Setup your github pages repo
 - To your `_config.yml`, add:
 ```yaml
@@ -22,16 +24,16 @@ remote-theme: yree/mold
 ```
 - Edit `_config.yml` file to further customize your blog.
 
-## Organization 📂
+### Organization 📂
 - The theme operates on the WYWIWYS (wee-wee-wiz) principle
 - The `README.md` at the repo root acts as the index for the GitHub Page
 - To create posts add `.md` files and folders in the same repo
 - Link these `.md` files across each other (refer to this repo structure).
 
-## Pro tips 💡
-### Site Settings
+### Pro tips 💡
+#### Site Settings
 You can change things such as the name of the blog, the author, the appearance of the theme (light, dark, or auto), how dates are formatted, etc. Customizable fields should be straightforward to understand. Still, `_config.yml` contains some comments to help you understand what each field does.
-### Dark mode for images
+#### Dark mode for images
 This theme provides dark mode by inverting all colors of the light mode through the CSS `invert()` function. This approach would also invert the color of all images, but, since this is not the behavior one would expect, images are not inverted by default.
 
 However, if you would like to force the color inversion on a specific image, you can do so by applying `class="ioda"` to that image (“ioda” stands for “invert on dark appearance”). See the image in the overview post for an example of this approach. Note that color inversion will take place only when the theme has a dark appearance!
