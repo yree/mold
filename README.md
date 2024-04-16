@@ -25,9 +25,9 @@ Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-plea
 - See site settings to further customize the theme.
 
 ### Organization 📂
-- The theme operates on the WYWIWYS (wee-wee-wiz) principle
-- The `README.md` at the repo root acts as the index for the GitHub Page
-- To create more posts add `.md` files and folders to your repo
+- The theme operates on the WYWIWYS (wee-wee-wiz) principle.
+- The `README.md` at the repo root acts as the index for the GitHub Page.
+- To create more posts add `.md` files and folders to your repo.
 - Link these `.md` files across each other (refer to this repo structure).
 
 ### Pro tips 💡
@@ -42,14 +42,14 @@ Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-plea
 - Images aren't inverted by default to maintain expected appearance.
 - Apply `class="ioda"` to specific images to force color inversion.
 
-## Contributing 🤝
-Bug reports and pull requests are welcome on GitHub at [yree/mold](https://github.com/yree/mold). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
-
 ## Development 📦
 - Run `bundle install` to set up your environment.
 - Start the server with `bundle exec jekyll serve`.
 - Modify your theme and content as needed, preview your theme at [http://localhost:4000](http://localhost:4000).
 - Only specific directories (`_layouts`, `_sass`, and `assets`) are bundled. Adjust `mold.gemspec` to include custom directories if necessary.
+
+## Contributing 🤝
+Feel free to report bugs or send pull requests over on GitHub at [yree/mold](https://github.com/yree/mold). Please adhere to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
 
 ## License 📃
 The theme is available as open source under the terms of the [MIT License](LICENSE).
