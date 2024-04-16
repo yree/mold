@@ -24,8 +24,13 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | relative_url }}" />
-    <!-- CSS -->
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
+    <!-- Sass -->
+    <style>
+      {% capture mold %}
+        {% include_relative _sass/mold.scss %}
+      {% endcapture %}
+      {{ mold | scssify }}
+    </style>
   </head>
   <body a="{{ site.theme_config.appearance | default: "auto" }}">
     <main class="page-content" aria-label="Content">

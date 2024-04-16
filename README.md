@@ -46,7 +46,8 @@ Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-plea
 - Run `bundle install` to set up your environment.
 - Start the server with `bundle exec jekyll serve`.
 - Modify your theme and content as needed, preview your theme at [http://localhost:4000](http://localhost:4000).
-- Only specific directories (`_layouts`, `_sass`, and `assets`) are bundled. Adjust `mold.gemspec` to include custom directories if necessary.
+- Only specific files and directories are bundled. Adjust `mold.gemspec` to include custom directories if necessary.
+
 
 ## Contributing 🤝
 Feel free to report bugs or send pull requests over on GitHub at [yree/mold](https://github.com/yree/mold). Please adhere to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
