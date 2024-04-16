@@ -6,6 +6,11 @@ baseurl: "/mold" # subpath of the site, e.g. "/blog" (leave it blank "" if you'r
 description: > # description of the site (multiple lines allowed)
   A minimal, optimized, lightweight design for static sites.
 
+footer_content: > #footer of the site
+  © 2024 Yree
+  [Github](https://github.com/yree)
+  [Disclaimer](disclaimer)
+
 permalink: /:slug
 
 favicon: "favicon.svg" # name+extension of favicon (which must be put on the root folder)
@@ -16,9 +21,6 @@ remote_theme: yree/mold
 
 theme_config:
   appearance: "auto" # can be "light", "dark" or "auto"
-  back_home_text: ".." # customize text for homepage link in post layout
-  date_format: "%Y-%m-%d" # customize how date is formatted
-  show_description: false # show blog description in home page
 
 sass:
   style: :compressed
@@ -26,3 +28,4 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+

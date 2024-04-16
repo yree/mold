@@ -1,3 +1,5 @@
 <footer>
-    <h5>© 2024 Yree</h5>
+    <h5>
+        {{ site.footer_content | newline_to_br | strip_newlines }}
+    </h5>
 </footer>
