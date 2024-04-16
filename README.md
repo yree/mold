@@ -1,13 +1,13 @@
 # mold 🍄
 
-**M**inimal **O**ptimized **L**ightweight **D**esign for Github Pages
+A **m**inimal **o**ptimized **l**ightweight **d**esign for Github Pages.
 
 Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-please).
 
 ## Features ✨
 - 👀 A WYWIWYS theme (What You Write Is What You See)
 - ⚡️ Fast
-- 🌓 Light, dark, and auto themes
+- 🌓 Light theme (dark theme [coming soon](https://github.com/yree/mold/issues/7#issuecomment-2056735774))
 - 📱 Responsive
 - 📖 Content-first (typography optimized for maximum readability)
 - 🔍 SEO optimized (uses Jekyll SEO Tag)
@@ -16,29 +16,29 @@ Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-plea
 
 ## Usage 🛠
 
-### Initial Setup 🏗️
-- Setup your github pages repo
-- To your `_config.yml`, add:
-```yaml
-remote-theme: yree/mold
-```
-- Edit `_config.yml` file to further customize your blog.
+### Setup 🏗️
+- Create a github pages repo, see [steps](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+- Add a `_config.yml` file (or copy the one from this repo), and insert below line:
+    ```yaml
+    remote-theme: yree/mold
+    ``` 
+- See site settings to further customize the theme.
 
 ### Organization 📂
 - The theme operates on the WYWIWYS (wee-wee-wiz) principle
 - The `README.md` at the repo root acts as the index for the GitHub Page
-- To create posts add `.md` files and folders in the same repo
+- To create more posts add `.md` files and folders to your repo
 - Link these `.md` files across each other (refer to this repo structure).
 
 ### Pro tips 💡
 #### Site Settings
-You can change things such as the name of the blog, the author, the appearance of the theme (light, dark, or auto), how dates are formatted, etc. Customizable fields should be straightforward to understand. Still, `_config.yml` contains some comments to help you understand what each field does.
-#### Dark mode for images
-This theme provides dark mode by inverting all colors of the light mode through the CSS `invert()` function. This approach would also invert the color of all images, but, since this is not the behavior one would expect, images are not inverted by default.
-
-However, if you would like to force the color inversion on a specific image, you can do so by applying `class="ioda"` to that image (“ioda” stands for “invert on dark appearance”). See the image in the overview post for an example of this approach. Note that color inversion will take place only when the theme has a dark appearance!
-
-For example, if you have a black and white image, it could make sense to invert it in dark mode. On the other hand, a colorful image will probably look bad if inverted.
+- Customize your blog further by editing the `_config.yml` file.
+  - Adjust the blog's name, author, theme appearance, date formatting, and more.
+  - The file includes comments to guide you through each customizable field.
+#### Dark Mode for Images
+- The theme's dark mode is achieved through CSS `invert()` function.
+- Images aren't inverted by default to maintain expected appearance.
+- Apply `class="ioda"` to specific images to force color inversion.
 
 ## Contributing 🤝
 Bug reports and pull requests are welcome on GitHub at [yree/mold](https://github.com/yree/mold). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
