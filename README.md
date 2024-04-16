@@ -48,6 +48,7 @@ Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-plea
 - Modify your theme and content as needed, preview your theme at [http://localhost:4000](http://localhost:4000).
 - Only specific files and directories are bundled. Adjust `mold.gemspec` to include custom directories if necessary.
 
+
 ## Contributing 🤝
 Feel free to report bugs or send pull requests over on GitHub at [yree/mold](https://github.com/yree/mold). Please adhere to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
 
