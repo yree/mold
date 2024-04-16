@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = "https://github.com/yree/mold"
   spec.license       = "MIT"
 
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_layouts|_sass|LICENSE|README|_config\.yml)!i) }
+  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(_layouts|_sass|LICENSE|README|_config\.yml)!i) }
 
   spec.add_runtime_dependency "jekyll", "~> 3.9.0"
   spec.add_runtime_dependency "jekyll-feed", "~> 0.15.1"
