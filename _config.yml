@@ -7,7 +7,7 @@ description: > # description of the site (multiple lines allowed)
   A minimal, optimized, lightweight design for static sites.
 
 footer_content: > #footer of the site
-  ##### © 2024 [Yree](https://yree.io) | [Github](https://github.com/yree) | [Comment](javascript:window.location='mailto:hey@yree.io?subject='+encodeURIComponent(document.title))
+  ##### © 2024 [Yree](https://yree.io) | :octocat: [Github](https://github.com/yree/mold) | :bug: [Report an Issue](https://github.com/yree/mold/issues/new)
 
 permalink: /:slug
 
