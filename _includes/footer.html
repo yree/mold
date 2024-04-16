@@ -2,9 +2,9 @@
     <h5>
         {% assign footer_lines = site.footer_content | newline_to_br | split: '<br />' %}
         {% for line in footer_lines %}
-            {% if line contains '[' %}
-                {% assign link_parts = line | split: '[' %}
-                <a href="{{ link_parts[1] | split: ']' | first }}">{{ link_parts[0] }}</a>
+            {% assign parts = line | split: '[' %}
+            {% if parts.size > 1 %}
+                <a href="{{ parts[1] | split: ']' | first }}">{{ parts[0] }}</a>
             {% else %}
                 {{ line }}
             {% endif %}
