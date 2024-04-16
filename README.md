@@ -31,10 +31,12 @@ Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-plea
 - Link these `.md` files across each other (refer to this repo structure).
 
 ### Pro tips 💡
+
 #### Site Settings
 - Customize your blog further by editing the `_config.yml` file.
   - Adjust the blog's name, author, theme appearance, date formatting, and more.
   - The file includes comments to guide you through each customizable field.
+
 #### Dark Mode for Images
 - The theme's dark mode is achieved through CSS `invert()` function.
 - Images aren't inverted by default to maintain expected appearance.
