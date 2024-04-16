@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: "en" }}">
-  
   <head>
+    <!-- Meta tags -->
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
+    <!-- Title -->
     <title>
       {%- if page.title -%}
         {{ page.title }}
@@ -13,29 +13,32 @@
         {{ site.title }}
       {%- endif -%}
     </title>
-  
+    <!-- SEO and feed meta tags -->
     {% comment %}
     {%-seo title=false-%}
     {% endcomment %}
     {%-feed_meta-%}
-  
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+    <!-- Favicon -->
     <link rel="shortcut icon" type="image/x-icon" href="{{ site.favicon | relative_url }}" />
+    <!-- CSS -->
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
   </head>
-
   <body a="{{ site.theme_config.appearance | default: "auto" }}">
     <main class="page-content" aria-label="Content">
       <div class="w">
+        <!-- Page content -->
         {{ content }}
-        <footer>
+        <!-- Footer -->
+        {%-if site.footer_content}
           {{ site.footer_content | markdownify }}
-        </footer>
+        {%-endif-%}
       </div>
     </main>
-
+    <!-- Goat Counter -->
     {%-if site.goat_counter and jekyll.environment == "production"-%}
       <script data-goatcounter="https://{{ site.goat_counter }}.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
