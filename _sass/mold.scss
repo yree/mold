@@ -97,7 +97,7 @@ a {
   }
 }
 
-.page-content {
+.w {
   max-width: 640px;
   margin: 0 auto;
   padding: 4rem 1rem;
@@ -109,4 +109,5 @@ footer {
   margin: 0 auto;
   padding: 1rem 2rem;
   flex-shrink: 0;
+  text-align: left;
 }
