@@ -45,8 +45,10 @@
   </body>
   <!-- Footer -->
   <footer>
-    {%-if site.footer_content-%}
-      {{ site.footer_content | markdownify }}
-    {%-endif-%}
+    <div class="w">
+      {%-if site.footer_content-%}
+        {{ site.footer_content | markdownify }}
+      {%-endif-%}
+    </div>
   </footer>
 </html>
