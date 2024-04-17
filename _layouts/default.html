@@ -33,9 +33,11 @@
         <!-- Page content -->
         {{ content }}
         <!-- Footer -->
-        {%-if site.footer_content-%}
-          {{ site.footer_content | markdownify }}
-        {%-endif-%}
+        <footer class="footer">
+          {%-if site.footer_content-%}
+            {{ site.footer_content | markdownify }}
+          {%-endif-%}
+        </footer>
       </div>
     </main>
     <!-- Goat Counter -->
