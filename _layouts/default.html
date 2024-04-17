@@ -29,10 +29,8 @@
   </head>
   <body a="{{ site.theme_config.appearance | default: "auto" }}">
     <main class="page-content" aria-label="Content">
-      <div class="w">
-        <!-- Page content -->
-        {{ content }}
-      </div>
+      <!-- Page content -->
+      {{ content }}
     </main>
     <!-- Goat Counter -->
     {%-if site.goat_counter and jekyll.environment == "production"-%}
@@ -45,10 +43,8 @@
   </body>
   <!-- Footer -->
   <footer>
-    <div class="w">
-      {%-if site.footer_content-%}
-        {{ site.footer_content | markdownify }}
-      {%-endif-%}
-    </div>
+    {%-if site.footer_content-%}
+      {{ site.footer_content | markdownify }}
+    {%-endif-%}
   </footer>
 </html>

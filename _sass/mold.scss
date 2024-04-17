@@ -48,12 +48,6 @@ li { margin: 0.4rem 0; }
 
 *:target { background: yellow; }
 
-.w {
-  max-width: 640px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-}
-
 hr {
   text-align: center;
   border: 0;
@@ -104,9 +98,15 @@ a {
 }
 
 .page-content {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 4rem 1rem;
   flex: 1;
 }
 
-.footer {
+footer {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
   flex-shrink: 0;
 }
