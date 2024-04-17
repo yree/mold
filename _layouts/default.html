@@ -32,13 +32,13 @@
       <div class="w">
         <!-- Page content -->
         {{ content }}
-        <!-- Footer -->
-        <footer class="footer">
-          {%-if site.footer_content-%}
-            {{ site.footer_content | markdownify }}
-          {%-endif-%}
-        </footer>
       </div>
+      <!-- Footer -->
+      <footer class="footer">
+        {%-if site.footer_content-%}
+          {{ site.footer_content | markdownify }}
+        {%-endif-%}
+      </footer>
     </main>
     <!-- Goat Counter -->
     {%-if site.goat_counter and jekyll.environment == "production"-%}
