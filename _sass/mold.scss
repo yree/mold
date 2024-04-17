@@ -52,7 +52,6 @@ li { margin: 0.4rem 0; }
   max-width: 640px;
   margin: 0 auto;
   padding: 4rem 2rem;
-  flex: 1; /* Make the content section flexible to expand and push the footer to the bottom */
 }
 
 hr {
@@ -105,8 +104,11 @@ a {
 }
 
 .footer {
-  flex-shrink: 0; /* Prevent the footer from shrinking */
-  margin-top: auto; /* Push the footer to the bottom of the flex container */
-  padding: 20px;
-  text-align: center;
+  position: relative; /* Footer is relatively positioned */
+  width: 100%;
+  background-color: #333; /* Background color */
+  color: white; /* Text color */
+  padding: 20px; /* Padding for content */
+  text-align: center; /* Center align text */
+  clear: both; /* Ensure footer clears floated content */
 }
