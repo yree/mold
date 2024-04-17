@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
   </head>
   <body a="{{ site.theme_config.appearance | default: "auto" }}">
-    <main class="page-content" aria-label="Content">
+    <main class="content" aria-label="Content">,
       <div class="w">
         <!-- Page content -->
         {{ content }}
@@ -45,8 +45,10 @@
   </body>
   <!-- Footer -->
   <footer>
-    {%-if site.footer_content-%}
-      {{ site.footer_content | markdownify }}
-    {%-endif-%}
+    <div class="w">
+      {%-if site.footer_content-%}
+        {{ site.footer_content | markdownify }}
+      {%-endif-%}
+    </div>
   </footer>
 </html>
