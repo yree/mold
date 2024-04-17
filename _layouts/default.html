@@ -33,12 +33,6 @@
         <!-- Page content -->
         {{ content }}
       </div>
-      <!-- Footer -->
-      <footer>
-        {%-if site.footer_content-%}
-          {{ site.footer_content | markdownify }}
-        {%-endif-%}
-      </footer>
     </main>
     <!-- Goat Counter -->
     {%-if site.goat_counter and jekyll.environment == "production"-%}
@@ -49,4 +43,10 @@
       </noscript>
     {%-endif-%}
   </body>
+  <!-- Footer -->
+  <footer>
+    {%-if site.footer_content-%}
+      {{ site.footer_content | markdownify }}
+    {%-endif-%}
+  </footer>
 </html>
