@@ -28,24 +28,31 @@
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
     <!-- Mathjax -->
     <script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
-    <script type="text/x-mathjax-config">
-      MathJax.Hub.Config({
-        extensions: ["tex2jax.js"],
-        jax: ["input/TeX", "output/HTML-CSS"],
-        tex2jax: {
-            inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-            displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-            processEscapes: true
-        },
-        "HTML-CSS": { availableFonts: ["TeX"] },
-        styles: {
-            ".MathJax_Display": {
-                width: "auto !important",
-                "max-width": "100% !important"
-            }
-        }
+    <style>
+      .scrollable {
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .equation {
+        display: inline-block;
+        white-space: nowrap;
+      }
+  </style>
+  <script>
+    window.onload = function() {
+      var equations = document.querySelectorAll('script[type^="math/tex"]');
+      equations.forEach(function(eq) {
+        var wrapper = document.createElement('div');
+        wrapper.className = 'scrollable';
+        var equation = document.createElement('div');
+        equation.className = 'equation';
+        equation.innerHTML = eq.textContent || eq.innerText;
+        wrapper.appendChild(equation);
+        eq.parentNode.insertBefore(wrapper, eq);
+        eq.remove();
       });
-    </script>
+    };
+  </script>
   </head>
   <body a="{{ site.theme_config.appearance | default: "auto" }}">
     <main class="content" aria-label="Content">
