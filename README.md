@@ -4,6 +4,9 @@ A **m**inimal **o**ptimized **l**ightweight **d**esign for Github Pages.
 
 Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-please).
 
+> **"Simplicity is the ultimate sophistication."**  
+> -- Leonardo da Vinci
+
 ## Features ✨
 - 👀 A WYWIWYS theme (What You Write Is What You See)
 - ⚡️ Fast
