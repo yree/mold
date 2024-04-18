@@ -134,15 +134,18 @@ The mathematics powered by [**MathJax**](https://www.mathjax.org/):
 $$
 \begin{equation}
   \sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}
-  \label{eq:series}
 \end{equation}
 $$
 
-We can reference the equation as \eqref{eq:series}.
-
-When $a \ne 0$, there are two solutions to $ax^2 + bx + c = 0$ and they are
+When $$a \ne 0$$, there are two solutions to $$ax^2 + bx + c = 0$$ and they are
 
 $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $$
+
+A long equation:
+
+$$
+1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \frac{x^5}{5!} + \frac{x^6}{6!} + \frac{x^7}{7!} + \frac{x^8}{8!} + \frac{x^9}{9!} + \frac{x^{10}}{10!} + \frac{x^{11}}{11!} + \frac{x^{12}}{12!} + \frac{x^{13}}{13!} + \frac{x^{14}}{14!} + \frac{x^{15}}{15!} + \frac{x^{16}}{16!} + \frac{x^{17}}{17!} + \frac{x^{18}}{18!} + \frac{x^{19}}{19!} + \frac{x^{20}}{20!}
+$$
 
 ## 🌊 Mermaid SVG
 
