@@ -48,9 +48,14 @@
   <!-- Footer -->
   <footer>
     <div class="w">
-      {%-if site.footer_content-%}
+      {%- if site.footer_content -%}
         {{ site.footer_content | markdownify }}
-      {%-endif-%}
+      {%- else -%}
+        {% capture default_footer %}
+        ##### © 2024 [{{ site.author }}]({{ site.url }}). Built with [mold](https://github.com/yree/mold).
+        {% endcapture %}
+        {{ default_footer | markdownify }}
+      {%- endif -%}
     </div>
   </footer>
 </html>
