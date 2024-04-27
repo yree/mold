@@ -51,10 +51,7 @@
       {%- if site.footer_content -%}
         {{ site.footer_content | markdownify }}
       {%- else -%}
-        {% capture default_footer %}
-        ##### © 2024 [{{ site.author }}]({{ site.url }}). Built with [mold](https://github.com/yree/mold).
-        {% endcapture %}
-        {{ default_footer | markdownify }}
+        <h5>© 2024 <a href="{{ site.url }}">{{ site.author }}</a>. Built with <a href="https://github.com/yree/mold">mold</a>.</h5>
       {%- endif -%}
     </div>
   </footer>
