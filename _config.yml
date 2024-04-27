@@ -6,8 +6,8 @@ baseurl: "/mold" # subpath of the site, e.g. "/blog" (leave it blank "" if you'r
 description: > # description of the site (multiple lines allowed)
   A minimal, optimized, lightweight design for static sites.
 
-footer_content: > #footer of the site
-  ##### © 2024 [Yree](https://yree.io). Powered by 🍄 [mold](https://github.com/yree/mold).
+# footer_content: > #footer of the site
+#   ##### © 2024 [Yree](https://yree.io). Powered by 🍄 [mold](https://github.com/yree/mold).
 
 permalink: /:slug
 
