@@ -17,7 +17,7 @@ Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-plea
 - 📰 RSS feed (uses Jekyll Feed)
 - 🚀 Made for GitHub Pages
 
-## Usage 🛠
+## Usage 🛠️
 
 ### Setup 🏗️
 - Create a github pages repo, see [steps](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
