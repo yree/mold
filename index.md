@@ -19,6 +19,13 @@ Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-plea
 - 📖 Content-first (typography optimized for maximum readability)
 - 🔍 SEO optimized (uses Jekyll SEO Tag)
 - 📰 RSS feed (uses Jekyll Feed)
+- ➗ Mathjax support $$e^{i\pi} = -1$$
+- 🧜‍♀️ Mermaid support (coming soon)
+<div class="mermaid">
+graph TD;
+    A-->B;
+    A-->C;
+</div>
 - 🚀 Made for GitHub Pages
 
 
