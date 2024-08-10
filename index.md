@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # mold 🍄
 
 A **m**inimal **o**ptimized **l**ightweight **d**esign for Github Pages.
@@ -16,6 +20,7 @@ Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-plea
 - 🔍 SEO optimized (uses Jekyll SEO Tag)
 - 📰 RSS feed (uses Jekyll Feed)
 - 🚀 Made for GitHub Pages
+
 
 ## Usage 🛠️
 
