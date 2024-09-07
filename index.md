@@ -21,11 +21,10 @@ Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-plea
 - 📰 RSS feed (uses Jekyll Feed)
 - ➗ Mathjax support $$e^{i\pi} = -1$$
 - 🧜‍♀️ Mermaid support (coming soon)
-<div class="mermaid">
+{% include mermaid.html content="
 graph TD;
     A-->B;
-    A-->C;
-</div>
+    A-->C;" %}
 - 🚀 Made for GitHub Pages
 
 
