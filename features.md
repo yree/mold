@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # 🌟 Features
 
 ## 🌈 Headings
@@ -157,6 +161,12 @@ $$
   cherry :active, c, after b a, 1d
 ```
 
+<form hx-post="/submit" hx-target="#response">
+            <label for="name">Name: </label>
+            <input type="text" id="name" name="name" required="">
+            <button type="submit">Submit</button>
+        </form>
+        
 ## 🔄 Reverse Footnote
 
 [^footnote]: The footnote source
