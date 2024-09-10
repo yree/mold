@@ -26,8 +26,11 @@
     <link rel="shortcut icon" type="image/x-i con" href="{{ site.favicon | relative_url }}" />
     <!-- CSS -->
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
+    <!-- TODO: Load scripts only when required -->
     <!-- Mathjax -->
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <!-- Mermaid -->
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" async></script>
   </head>
   <body a="{{ site.theme_config.appearance | default: "auto" }}">
     <main class="content" aria-label="Content">
@@ -51,7 +54,7 @@
       {%- if site.footer_content -%}
         {{ site.footer_content | markdownify }}
       {%- else -%}
-        <h5><a href="{{ site.url }}">{{ site.author }}</a> :: page by <a href="https://github.com/yree/mold">mold</a></h5>
+        <h5>© 2024 <a href="{{ site.url }}">{{ site.author }}</a>. Built with <a href="https://github.com/yree/mold">mold</a>.</h5>
       {%- endif -%}
     </div>
   </footer>
