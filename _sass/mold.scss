@@ -11,11 +11,12 @@
 
 body[a="dark"] { @include dark-appearance; }
 
-
 @media (prefers-color-scheme: dark) {
   body[a="auto"] { @include dark-appearance; }
 }
-// -------------------------------------------- //
+
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Emoji:wght@300..700&display=swap');
 
 // bg color is also needed in html in order to
 // block body's background propagation
