@@ -2,69 +2,22 @@
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Emoji:wght@300..700&display=swap');
 
 // ------------------- VARIABLES ------------------- //
-:root {
-  --font-family: "JetBrains Mono", monospace;
-  --line-height: 1rem;
-  --border-thickness: 0.2ch;
-  --text-color: black;
-  --text-color-alt: #2c2c2c;
-  --background-color: white;
-  --background-color-alt: lightgrey;
-  --link-color: blue;
+$font-family: "JetBrains Mono", monospace;
+$line-height: 1rem;
+$border-thickness: 0.2ch;
+$text-color: black;
+$text-color-alt: #2c2c2c;
+$background-color: white;
+$background-color-alt: lightgrey;
+$link-color: blue;
 
-  --font-weight-normal: 400;
-  --font-weight-medium: 600;
-  --font-weight-bold: 800;
+$font-weight-normal: 400;
+$font-weight-medium: 600;
+$font-weight-bold: 800;
 
-  --spacing-base: 1ch;
-  --max-width: calc(min(80ch, round(down, 100%, 1ch)));
-  --grid-gap: 1ch;
-}
-
-// ------------------- GENERAL STYLES ------------------- //
-* {
-  box-sizing: border-box;
-}
-
-html, body {
-  background: var(--background-color);
-  height: 100%;
-}
-
-html {
-  font-size: 16px;
-}
-
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  html {
-    font-size: 12px;
-  }
-}
-
-body {
-  color: var(--text-color);
-  font-family: var(--font-family);
-  line-height: 1.4;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-a {
-  text-decoration: none;
-  color: var(--link-color);
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
+$spacing-base: 1ch;
+$max-width: calc(min(80ch, round(down, 100%, 1ch)));
+$grid-gap: 1ch;
 
 // ------------------- THEME SWITCHER ------------------- //
 @mixin dark-appearance {
@@ -79,6 +32,16 @@ a {
   }
 }
 
+html[a="dark"] { 
+  @include dark-appearance; 
+}
+
+@media (prefers-color-scheme: dark) {
+  html[a="auto"] { 
+    @include dark-appearance; 
+  }
+}
+
 body[a="dark"] { 
   @include dark-appearance; 
 }
@@ -89,13 +52,43 @@ body[a="dark"] {
   }
 }
 
+// ------------------- GENERAL STYLES ------------------- //
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: $background-color;
+  height: 100%;
+}
+
+body {
+  color: $text-color;
+  font-family: $font-family;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
 // ------------------- TYPOGRAPHY ------------------- //
 h2, h3, h4, h5, h6 {
-  margin-top: calc(var(--spacing-base) * 2);
+  margin-top: calc($spacing-base * 2);
 }
 
 p, li {
-  margin: var(--spacing-base) 0;
+  margin: $spacing-base 0;
   word-break: break-word;
   hyphens: auto;
 }
@@ -106,24 +99,24 @@ p, li {
 
 hr {
   position: relative;
-  height: var(--line-height);
-  margin: calc(var(--line-height) * 1.5) 0;
+  height: $line-height;
+  margin: calc($line-height * 1.5) 0;
   border: 0;
 
   &::after {
     content: "";
     position: absolute;
-    top: calc(var(--line-height) / 2 - var(--border-thickness));
+    top: calc($line-height / 2 - $border-thickness);
     left: 0;
     width: 100%;
-    border-top: calc(var(--border-thickness) * 2.5) double var(--text-color);
+    border-top: calc($border-thickness * 2.5) double $text-color;
     height: 0;
   }
 }
 
 blockquote {
-  border-left: var(--border-thickness) solid var(--text-color);
-  padding: var(--spacing-base);
+  border-left: $border-thickness solid $text-color;
+  padding: $spacing-base;
   margin: 0;
 
   p { margin: 0; }
@@ -131,24 +124,24 @@ blockquote {
 
 // ------------------- LAYOUT & SPACING ------------------- //
 .w {
-  max-width: var(--max-width);
+  max-width: $max-width;
   margin: 0 auto;
 }
 
 .content {
   flex: 1;
-  padding: var(--spacing-base);
+  padding: $spacing-base;
 }
 
 footer {
   flex-shrink: 0;
-  padding: 0 var(--spacing-base) var(--spacing-base);
+  padding: 0 $spacing-base $spacing-base;
 }
 
 // ------------------- FORMS ------------------- //
 input, button, textarea {
-  border: var(--border-thickness) solid var(--text-color);
-  padding: calc(var(--line-height) / 2 - var(--border-thickness)) calc(1ch - var(--border-thickness));
+  border: $border-thickness solid $text-color;
+  padding: calc($line-height / 2 - $border-thickness) calc(1ch - $border-thickness);
   margin: 0;
   font: inherit;
   font-weight: inherit;
@@ -160,7 +153,7 @@ input {
   width: calc(round(down, 100%, 1ch));
 }
 ::placeholder {
-  color: var(--text-color-alt);
+  color: $text-color-alt;
   opacity: 1;
 }
 
@@ -170,12 +163,12 @@ button, input:focus {
 
 button {
   text-transform: uppercase;
-  font-weight: var(--font-weight-medium);
+  font-weight: $font-weight-medium;
   cursor: pointer;
-  background: var(--background-color);
+  background: $background-color;
 
   &:hover {
-    background: var(--background-color-alt);
+    background: $background-color-alt;
   }
 
   &:active {
@@ -185,22 +178,22 @@ button {
 
 // ------------------- CODE & TABLES ------------------- //
 code {
-  color: var(--text-color);
-  background: var(--background-color-alt);
-  padding: calc(var(--line-height) / 8);
+  color: $text-color;
+  background: $background-color-alt;
+  padding: calc($line-height / 8);
 }
 
 div.highlighter-rouge code {
-  border: var(--border-thickness) solid var(--text-color);
+  border: $border-thickness solid $text-color;
   display: block;
   overflow-x: auto;
-  padding: var(--spacing-base);
+  padding: $spacing-base;
 }
 
 pre {
   white-space: pre;
   overflow-x: auto;
-  margin: var(--line-height) 0;
+  margin: $line-height 0;
 }
 
 table {
@@ -208,8 +201,8 @@ table {
   border-collapse: collapse;
   
   th, td {
-    border: var(--border-thickness) solid var(--text-color);
-    padding: calc(var(--line-height) / 2);
+    border: $border-thickness solid $text-color;
+    padding: calc($line-height / 2);
   }
 }
 
@@ -217,12 +210,12 @@ table {
 .grid {
   --grid-cells: 0;
   display: flex;
-  gap: var(--grid-gap);
-  margin-bottom: var(--line-height);
-  width: calc(round(down, 100%, (var(--grid-gap) * var(--grid-cells)) - (var(--grid-gap) * (var(--grid-cells) - 1))));
+  gap: $grid-gap;
+  margin-bottom: $line-height;
+  width: calc(round(down, 100%, ($grid-gap * var(--grid-cells)) - ($grid-gap * (var(--grid-cells) - 1))));
 
   > *, input {
-    flex: 0 0 calc((100% - (var(--grid-gap) * (var(--grid-cells) - 1))) / var(--grid-cells));
+    flex: 0 0 calc((100% - ($grid-gap * (var(--grid-cells) - 1))) / var(--grid-cells));
   }
 
   @for $i from 1 through 9 {
@@ -231,4 +224,3 @@ table {
     }
   }
 }
-
