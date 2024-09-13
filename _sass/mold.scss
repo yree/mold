@@ -28,10 +28,25 @@ html, body {
   height: 100%;
 }
 
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 body {
   color: var(--text-color);
   font-family: var(--font-family);
-  font-size: 16px;
   line-height: 1.4;
   margin: 0;
   display: flex;
@@ -161,7 +176,7 @@ button {
   }
 
   &:active {
-    transform: translate(2px, 2px);
+    transform: translate(0.2ch, 0.2ch);
   }
 }
 
@@ -194,8 +209,6 @@ table {
     padding: calc(var(--line-height) / 2);
   }
 }
-
-
 
 // ------------------- GRID SYSTEM ------------------- //
 .grid {
