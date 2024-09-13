@@ -1,114 +1,234 @@
-// -------------- THEME SWITCHER -------------- //
+// ------------------- VARIABLES ------------------- //
+:root {
+  --font-family: "JetBrains Mono", monospace;
+  --line-height: 1rem;
+  --border-thickness: 0.2ch;
+  --text-color: black;
+  --text-color-alt: #2c2c2c;
+  --background-color: white;
+  --background-color-alt: lightgrey;
+  --link-color: blue;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 600;
+  --font-weight-bold: 800;
+
+  --spacing-base: 1ch;
+  --max-width: calc(min(80ch, round(down, 100%, 1ch)));
+  --grid-gap: 1ch;
+}
+
+// ------------------- GENERAL STYLES ------------------- //
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background: var(--background-color);
+  height: 100%;
+}
+
+body {
+  color: var(--text-color);
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ------------------- THEME SWITCHER ------------------- //
 @mixin dark-appearance {
   filter: invert(1) hue-rotate(180deg);
+
   img {
-    filter: invert(1) hue-rotate(180deg);
+    filter: inherit;
+
     &.ioda {
       filter: invert(0);
     }
   }
 }
 
-body[a="dark"] { @include dark-appearance; }
+body[a="dark"] { 
+  @include dark-appearance; 
+}
 
 @media (prefers-color-scheme: dark) {
-  body[a="auto"] { @include dark-appearance; }
+  body[a="auto"] { 
+    @include dark-appearance; 
+  }
 }
 
-// fonts
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Emoji:wght@300..700&display=swap');
-
-// bg color is also needed in html in order to
-// block body's background propagation
-// see: https://stackoverflow.com/a/61265706
-html, body { background: white; }
-
-html { height: 100%; }
-
-body {
-  color: black;
-  font-family: "JetBrains Mono", monospace;
-  font-size: 16px;
-  line-height: 1.4;
-  margin: 0;
-  overflow-wrap: break-word;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+// ------------------- TYPOGRAPHY ------------------- //
+h2, h3, h4, h5, h6 {
+  margin-top: calc(var(--spacing-base) * 2);
 }
 
-.post-meta { text-align: right; }
+p, li {
+  margin: var(--spacing-base) 0;
+  word-break: break-word;
+  hyphens: auto;
+}
 
-h2, h3, h4, h5, h6 { margin-top: 2rem; }
-
-hr { margin: 2rem 0; }
-
-p { margin: 1rem 0; }
-
-li { margin: 0.4rem 0; }
-
-*:target { background: yellow; }
-
-.w {
-  max-width: 640px;
-  margin: 0 auto;
+.post-meta {
+  text-align: right;
 }
 
 hr {
-  text-align: center;
+  position: relative;
+  height: var(--line-height);
+  margin: calc(var(--line-height) * 1.5) 0;
   border: 0;
 
-  &:before { content: '/////' }
-  &:after { content: attr(data-content) '/////' }
-}
-
-table { width: 100%; }
-
-table, th, td {
-  border: thin solid black;
-  border-collapse: collapse;
-  padding: 0.4rem;
-}
-
-code {
-  color: black;
-  background: lightgrey;
-}
-
-div.highlighter-rouge code {
-  display: block;
-  overflow-x: auto;
-  padding: 1rem;
+  &::after {
+    content: "";
+    position: absolute;
+    top: calc(var(--line-height) / 2 - var(--border-thickness));
+    left: 0;
+    width: 100%;
+    border-top: calc(var(--border-thickness) * 2.5) double var(--text-color);
+    height: 0;
+  }
 }
 
 blockquote {
-  border-left: thin solid black;
-  padding: 1rem;
+  border-left: var(--border-thickness) solid var(--text-color);
+  padding: var(--spacing-base);
   margin: 0;
 
   p { margin: 0; }
 }
 
-img {
-  max-width: 100%;
-  display: block;
+// ------------------- LAYOUT & SPACING ------------------- //
+.w {
+  max-width: var(--max-width);
   margin: 0 auto;
-}
-
-a {
-  text-decoration: none;
-  color: blue;
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .content {
   flex: 1;
-  padding: 1rem 1rem 1rem 1rem;
+  padding: var(--spacing-base);
 }
 
 footer {
   flex-shrink: 0;
-  padding: 0rem 1rem 1rem 1rem;
+  padding: 0 var(--spacing-base) var(--spacing-base);
 }
+
+// ------------------- FORMS ------------------- //
+input, button, textarea {
+  border: var(--border-thickness) solid var(--text-color);
+  padding: calc(var(--line-height) / 2 - var(--border-thickness)) calc(1ch - var(--border-thickness));
+  margin: 0;
+  font: inherit;
+  font-weight: inherit;
+  line-height: normal;
+  width: auto;
+}
+
+input[type=checkbox] {
+  display: inline-grid;
+  place-content: center;
+  vertical-align: top;
+  width: 2ch;
+  height: var(--line-height);
+  cursor: pointer;
+  
+  &:checked:before {
+    content: "";
+    width: 1ch;
+    height: calc(var(--line-height) / 2);
+    background: var(--text-color);
+  }
+}
+
+input {
+  width: calc(round(down, 100%, 1ch));
+}
+::placeholder {
+  color: var(--text-color-alt);
+  opacity: 1;
+}
+
+button, input:focus {
+  outline: none;
+}
+
+button {
+  text-transform: uppercase;
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  background: var(--background-color);
+
+  &:hover {
+    background: var(--background-color-alt);
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+  }
+}
+
+// ------------------- CODE & TABLES ------------------- //
+code {
+  color: var(--text-color);
+  background: var(--background-color-alt);
+  padding: calc(var(--line-height) / 8);
+}
+
+div.highlighter-rouge code {
+  border: var(--border-thickness) solid var(--text-color);
+  display: block;
+  overflow-x: auto;
+  padding: var(--spacing-base);
+}
+
+pre {
+  white-space: pre;
+  overflow-x: auto;
+  margin: var(--line-height) 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  
+  th, td {
+    border: var(--border-thickness) solid var(--text-color);
+    padding: calc(var(--line-height) / 2);
+  }
+}
+
+
+
+// ------------------- GRID SYSTEM ------------------- //
+.grid {
+  --grid-cells: 0;
+  display: flex;
+  gap: var(--grid-gap);
+  margin-bottom: var(--line-height);
+  width: calc(round(down, 100%, (var(--grid-gap) * var(--grid-cells)) - (var(--grid-gap) * (var(--grid-cells) - 1))));
+
+  > *, input {
+    flex: 0 0 calc((100% - (var(--grid-gap) * (var(--grid-cells) - 1))) / var(--grid-cells));
+  }
+
+  @for $i from 1 through 9 {
+    &:has(> :last-child:nth-child(#{$i})) {
+      --grid-cells: #{$i};
+    }
+  }
+}
+
