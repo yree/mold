@@ -1,12 +1,12 @@
-// --------------------- FONTS --------------------- //
+// ------------------- FONTS ------------------- //
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Emoji:wght@300..700&display=swap');
 
 // ------------------- VARIABLES ------------------- //
 $font-family: "JetBrains Mono", monospace;
-$line-height: 1rem;
+$line-height: 1ch;
 $border-thickness: 0.2ch;
 $text-color: black;
-$text-color-alt: #2c2c2c;
+$text-color-alt: dimgrey;
 $background-color: white;
 $background-color-alt: lightgrey;
 $link-color: blue;
@@ -32,23 +32,13 @@ $grid-gap: 1ch;
   }
 }
 
-html[a="dark"] { 
-  @include dark-appearance; 
+html[a="dark"], body[a="dark"] {
+  @include dark-appearance;
 }
 
 @media (prefers-color-scheme: dark) {
-  html[a="auto"] { 
-    @include dark-appearance; 
-  }
-}
-
-body[a="dark"] { 
-  @include dark-appearance; 
-}
-
-@media (prefers-color-scheme: dark) {
-  body[a="auto"] { 
-    @include dark-appearance; 
+  html[a="auto"], body[a="auto"] {
+    @include dark-appearance;
   }
 }
 
@@ -57,9 +47,12 @@ body[a="dark"] {
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 html, body {
   background: $background-color;
-  height: 100%;
 }
 
 body {
@@ -84,7 +77,7 @@ a {
 
 // ------------------- TYPOGRAPHY ------------------- //
 h2, h3, h4, h5, h6 {
-  margin-top: calc($spacing-base * 2);
+  margin-top: $spacing-base * 2;
 }
 
 p, li {
@@ -95,23 +88,6 @@ p, li {
 
 .post-meta {
   text-align: right;
-}
-
-hr {
-  position: relative;
-  height: $line-height;
-  margin: calc($line-height * 1.5) 0;
-  border: 0;
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: calc($line-height / 2 - $border-thickness);
-    left: 0;
-    width: 100%;
-    border-top: calc($border-thickness * 2.5) double $text-color;
-    height: 0;
-  }
 }
 
 blockquote {
@@ -141,10 +117,9 @@ footer {
 // ------------------- FORMS ------------------- //
 input, button, textarea {
   border: $border-thickness solid $text-color;
-  padding: calc($line-height / 2 - $border-thickness) calc(1ch - $border-thickness);
+  padding: $line-height;
   margin: 0;
   font: inherit;
-  font-weight: inherit;
   line-height: normal;
   width: auto;
 }
@@ -152,6 +127,7 @@ input, button, textarea {
 input {
   width: calc(round(down, 100%, 1ch));
 }
+
 ::placeholder {
   color: $text-color-alt;
   opacity: 1;
@@ -180,7 +156,7 @@ button {
 code {
   color: $text-color;
   background: $background-color-alt;
-  padding: calc($line-height / 8);
+  padding: $line-height / 8;
 }
 
 div.highlighter-rouge code {
@@ -202,17 +178,16 @@ table {
   
   th, td {
     border: $border-thickness solid $text-color;
-    padding: calc($line-height / 2);
+    padding: $line-height;
   }
 }
 
 // ------------------- GRID SYSTEM ------------------- //
 .grid {
-  --grid-cells: 0;
   display: flex;
   gap: $grid-gap;
   margin-bottom: $line-height;
-  width: calc(round(down, 100%, ($grid-gap * var(--grid-cells)) - ($grid-gap * (var(--grid-cells) - 1))));
+  width: calc(100% - ($grid-gap * (var(--grid-cells) - 1)));
 
   > *, input {
     flex: 0 0 calc((100% - ($grid-gap * (var(--grid-cells) - 1))) / var(--grid-cells));
