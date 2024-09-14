@@ -4,6 +4,8 @@ layout: default
 
 # 🌟 Features
 
+<hr>
+
 ## 🌈 Headings
 
 # H1 - heading
@@ -161,11 +163,36 @@ $$
   cherry :active, c, after b a, 1d
 ```
 
-<form hx-post="/submit" hx-target="#response">
-            <label for="name">Name: </label>
-            <input type="text" id="name" name="name" required="">
-            <button type="submit">Submit</button>
-        </form>
+## Buttons
+
+Here are some buttons:
+
+<nav>
+    <button>Reset</button>
+    <button>Save</button>
+</nav>
+
+## Forms
+
+And some forms:
+
+<form class="grid">
+<label>First name <input type="text" placeholder="Placeholder..." /></label>
+<label>Last name <input type="text" placeholder="Text goes here..." /></label>
+<label>Age <input type="text" value="30" /></label>
+</form>
+
+## Grids
+
+Add the `grid` class to a container to divide up the horizontal space evenly for the cells.
+Here are six grids with increasing cell count:
+
+<input readonly value="1" />
+<div class="grid"><input readonly value="1" /><input readonly value="2" /></div>
+<div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /></div>
+<div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /></div>
+<div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /><input readonly value="5" /></div>
+<div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /><input readonly value="5" /><input readonly value="6" /></div>
         
 ## 🔄 Reverse Footnote
 
