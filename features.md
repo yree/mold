@@ -163,7 +163,7 @@ $$
   cherry :active, c, after b a, 1d
 ```
 
-## Forms
+## Buttons
 
 Here are some buttons:
 
@@ -172,7 +172,9 @@ Here are some buttons:
     <button>Save</button>
 </nav>
 
-And inputs:
+## Forms
+
+And some forms:
 
 <form class="grid">
 <label>First name <input type="text" placeholder="Placeholder..." /></label>
@@ -183,10 +185,9 @@ And inputs:
 ## Grids
 
 Add the `grid` class to a container to divide up the horizontal space evenly for the cells.
-Note that it maintains the monospace, so the total width might not be 100%.
 Here are six grids with increasing cell count:
 
-<div class="grid"><input readonly value="1" /></div>
+<input readonly value="1" />
 <div class="grid"><input readonly value="1" /><input readonly value="2" /></div>
 <div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /></div>
 <div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /></div>
