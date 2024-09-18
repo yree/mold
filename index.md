@@ -2,77 +2,94 @@
 layout: default
 ---
 
-# mold 🍄
+# dont<span id="text"></span>
 
-A **m**inimal **o**ptimized **l**ightweight **d**esign for Github Pages.
+Hey there,
 
-Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-please).
+Quiet your mind.<br>
+Let go of the constant urge to do.<br>
+Just stop, and don’t.
 
-> **"Simplicity is the ultimate sophistication."**  
-> -- Leonardo da Vinci
+## You’ve been idle for **<span id="counter">0</span> seconds**
 
-## Features ✨
+This timer tracks the time you've chosen not to act. No chasing goals, no distractions, no tasks calling for attention. It's a space where stopping is the point—away from the endless stream of things to do.
 
-- 👀 A WYWIWYS theme (What You Write Is What You See)
-- ⚡️ Fast
-- 🌓 Light and dark theme
-- 📱 Responsive
-- 📖 Content-first (typography optimized for maximum readability)
-- 🔍 SEO optimized (uses Jekyll SEO Tag)
-- 📰 RSS feed (uses Jekyll Feed)
-- ➗ Mathjax support $$e^{i\pi} = -1$$
-- 🧜‍♀️ Mermaid support
-
-{% include mermaid.html content="
-graph TD;
-    A-->B;
-    A-->C;"
-%}
-
-## Usage 🛠️
-
-### Setup 🏗️
-
-- Create a github pages repo, see [steps](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
-- Add a `_config.yml` file (or copy the one from this repo), and insert below line:
-    ```yaml
-    remote-theme: yree/mold
-    ``` 
-- See site settings to further customize the theme.
-
-### Organization 📂
-
-- The theme operates on the WYWIWYS (wee-wee-wiz) principle.
-- The `README.md` at the repo root acts as the index for the GitHub Page.
-- To create more posts add `.md` files and folders to your repo.
-- Link these `.md` files across each other (refer to this repo structure).
-
-### Pro tips 💡
-
-#### Site Settings
-
-- Customize your blog further by editing the `_config.yml` file.
-- Adjust the blog's name, author, theme appearance, date formatting, and more.
-- The file includes comments to guide you through each customizable field.
-
-#### Dark Mode for Images
-
-- The theme's dark mode is achieved through CSS `invert()` function.
-- Images aren't inverted by default to maintain expected appearance.
-- Apply `class="ioda"` to specific images to force color inversion.
-
-## Development 📦
-
-- Run `bundle install` to set up your environment.
-- Start the server with `bundle exec jekyll serve`.
-- Modify your theme and content as needed, preview your theme at [http://localhost:4000](http://localhost:4000).
-- Only specific files and directories are bundled. Adjust `mold.gemspec` to include custom directories if necessary.
+Stay as long as you like or move on. There’s no goal here, just the simple act of stopping. Sometimes, the most meaningful choice is to stop everything and simply let yourself be still.
 
 
-## Contributing 🤝
+## Your max dont time is <span id="most-dont-time">0</span> seconds.
 
-Feel free to report bugs or send pull requests over on GitHub at [yree/mold](https://github.com/yree/mold). Please adhere to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
+<script>
 
-## License 📃
 
-The theme is available as open source under the terms of the [MIT License](LICENSE).
+</script>
+
+<script>
+    let idleTime = 0;
+    let mostIdleTime = 0;
+    let idleInterval;
+    
+    let exclamations = 0, max = 4, mouseTimeout;
+    const text = document.getElementById('text');
+
+    // Function to update the displayed text with the correct number of exclamations
+    const updateText = () => text.textContent = `${'!'.repeat(exclamations)}`;
+
+    function resetCounter() {
+        if (idleTime > mostIdleTime) {
+            mostIdleTime = idleTime;
+            document.getElementById("most-dont-time").textContent = mostIdleTime;
+        }
+
+        idleTime = 0;
+        document.getElementById("counter").textContent = idleTime;
+        idleTime = -1;
+    }
+    // Function to remove one exclamation mark after a delay (used for both click and mouse movement)
+    const scheduleRemoval = () => {
+        if (exclamations > 0) {
+            setTimeout(() => {
+                exclamations--;
+                updateText();
+                if (exclamations > 0) scheduleRemoval(); // Recursively call to remove all exclamations
+            }, 2000);
+        }
+    };
+
+    // Handle click anywhere on the page
+    document.onclick = () => {
+        resetCounter();
+        if (exclamations < max) {
+            exclamations++;
+            updateText();
+        }
+    };
+
+    // Handle mouse movement and add exclamation mark if none are present
+    document.onmousemove = () => {
+        clearTimeout(mouseTimeout); 
+        clearTimeout(scheduleRemoval); // Clear any previous mouse inactivity timeout
+        resetCounter();
+        if (exclamations === 0) {
+            exclamations++;
+            updateText();
+        }
+        mouseTimeout = setTimeout(() => {
+            exclamations--;
+            updateText();
+            if (exclamations > 0) scheduleRemoval(); // Start the removal process if first exclamation
+        }, 2000);
+    };
+
+    function startIdleTimer() {
+        idleInterval = setInterval(() => {
+            idleTime++;
+            if (idleTime > 0)
+            document.getElementById("counter").textContent = idleTime;
+        }, 1000);
+    }
+
+    window.onload = function() {
+        startIdleTimer();
+    };
+</script>
