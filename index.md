@@ -35,11 +35,15 @@ Stay as long as you like or move on. There’s no goal here, just the simple act
     // Function to update the displayed text with the correct number of exclamations
     const updateText = () => text.textContent = `${'!'.repeat(exclamations)}`;
 
-    function resetCounter() {
+    function updateMaxTime() {
         if (idleTime > mostIdleTime) {
             mostIdleTime = idleTime;
             document.getElementById("most-dont-time").textContent = mostIdleTime;
         }
+    }
+    function resetCounter() {
+        
+        updateMaxTime();
 
         idleTime = 0;
         document.getElementById("counter").textContent = idleTime;
@@ -68,7 +72,6 @@ Stay as long as you like or move on. There’s no goal here, just the simple act
     // Handle mouse movement and add exclamation mark if none are present
     document.onmousemove = () => {
         clearTimeout(mouseTimeout); 
-        clearTimeout(scheduleRemoval); // Clear any previous mouse inactivity timeout
         resetCounter();
         if (exclamations === 0) {
             exclamations++;
@@ -84,8 +87,9 @@ Stay as long as you like or move on. There’s no goal here, just the simple act
     function startIdleTimer() {
         idleInterval = setInterval(() => {
             idleTime++;
-            if (idleTime > 0)
+            if (idleTime > 0) 
             document.getElementById("counter").textContent = idleTime;
+            updateMaxTime();
         }, 1000);
     }
 
