@@ -193,6 +193,17 @@ Here are six grids with increasing cell count:
 <div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /></div>
 <div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /><input readonly value="5" /></div>
 <div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /><input readonly value="5" /><input readonly value="6" /></div>
+
+## Details and Summary
+
+<details>
+<summary>
+A short summary, see full.
+</summary>
+<p>
+The full description of the contents
+</p>
+</details>
         
 ## 🔄 Reverse Footnote
 

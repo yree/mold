@@ -182,7 +182,37 @@ table {
   }
 }
 
+// ------------------- DETAILS ------------------- //
+details {
+  border: $border-thickness solid $text-color;
+  padding: 1ch;
+  margin-bottom: $line-height;
+}
+
+summary {
+  cursor: pointer;
+}
+
+details[open] summary {
+  margin-bottom: $line-height;
+}
+
+details ::marker {
+  display: inline-block;
+  content: '▶';
+  margin: 0;
+}
+
+details[open] ::marker {
+  content: '▼';
+}
+
+details :last-child {
+  margin-bottom: 0;
+}
+
 // ------------------- GRID SYSTEM ------------------- //
+
 .grid {
   display: flex;
   gap: $grid-gap;
