@@ -6,6 +6,7 @@ Inspired from [no-style-please](https://github.com/riggraz/no-style-please) and 
 
 > **"Simplicity is the ultimate sophistication."**  
 > -- Leonardo da Vinci
+
 ## Features ✨
 
 - 👀 A WYWIWYS theme (What You Write Is What You See)
