@@ -29,6 +29,7 @@ Inspired from [no-style-please](https://github.com/riggraz/no-style-please) and 
     remote-theme: yree/mold
     ``` 
 - See site settings to further customize the theme.
+
 ### Organization 📂
 - The theme operates on the WYWIWYS (wee-wee-wiz) principle.
 - The `README.md` at the repo root acts as the index for the GitHub Page.
