@@ -1,147 +1,65 @@
----
-layout: default
----
 
-# dont<span id="text"></span> 😌
+# mold 🍄
 
-## Hey there 👋
+A **m**inimal **o**ptimized **l**ightweight **d**esign for Github Pages.
 
-Quiet your mind.
+Inspired from [no-style-please](https://github.com/riggraz/no-style-please) and [the-monospace-web](https://github.com/owickstrom/the-monospace-web).
 
-Let go of the constant urge to do.
+> **"Simplicity is the ultimate sophistication."**  
+> -- Leonardo da Vinci
+## Features ✨
 
-Just stop, and **don’t**.
+- 👀 A WYWIWYS theme (What You Write Is What You See)
+- ⚡️ Fast
+- 🌓 Light and dark theme
+- 📱 Responsive
+- 📖 Content-first (typography optimized for maximum readability)
+- 🔍 SEO optimized (uses Jekyll SEO Tag)
+- 📰 RSS feed (uses Jekyll Feed)
+- ➗ Mathjax support
+- 🧜‍♀️ Mermaid support
 
-## You’ve doing great for <span id="counter">0</span> seconds ⏳
+## Usage 🛠️
 
-This timer tracks the time you've chosen not to act. No chasing goals, no distractions, no tasks calling for attention. It's a space where stopping is the point—away from the endless stream of things to do.
+### Setup 🏗️
 
-<br>**Breathe** <span id="breathing-box"></span><span id="breathing-state"></span>
+- Create a github pages repo, see [steps](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
+- Add a `_config.yml` file (or copy the one from this repo), and insert below line:
+    ```yaml
+    remote-theme: yree/mold
+    ``` 
+- See site settings to further customize the theme.
+### Organization 📂
+- The theme operates on the WYWIWYS (wee-wee-wiz) principle.
+- The `README.md` at the repo root acts as the index for the GitHub Page.
+- To create more posts add `.md` files and folders to your repo.
+- Link these `.md` files across each other (refer to this repo structure).
 
-### You were most still for <span id="most-dont-time">0</span> seconds ⏱️
+### Pro tips 💡
 
-<script>
-    let idleTime = 0, mostIdleTime = 0, idleInterval;
-    let exclamations = 0, maxExclamations = 4, mouseTimeout;
+#### Site Settings
 
-    const text = document.getElementById('text');
-    const counterElem = document.getElementById("counter");
-    const maxDontTimeElem = document.getElementById("most-dont-time");
+- Customize your blog further by editing the `_config.yml` file.
+- Adjust the blog's name, author, theme appearance, date formatting, and more.
+- The file includes comments to guide you through each customizable field.
 
-    let breatheLines = 0, breatheState = 0;
-    const maxBreatheLines = 16;
-    const breathingBox = document.getElementById('breathing-box');
-    const breathingState = document.getElementById('breathing-state');
-    const breathingLabels = ["Inhale", "Hold", "Exhale"];
-    let breathingInterval;
+#### Dark Mode for Images
 
-    function updateMaxTime() {
-        if (idleTime > mostIdleTime) {
-            mostIdleTime = idleTime;
-            maxDontTimeElem.textContent = mostIdleTime;
-        }
-    }
+- The theme's dark mode is achieved through CSS `invert()` function.
+- Images aren't inverted by default to maintain expected appearance.
+- Apply `class="ioda"` to specific images to force color inversion.
 
-    function resetCounter() {
-        updateMaxTime();
-        idleTime = 0;
-        counterElem.textContent = idleTime;
-    }
+## Development 📦
 
-    function updateText() {
-        text.textContent = `${'!'.repeat(exclamations)}`;
-    }
+- Run `bundle install` to set up your environment.
+- Start the server with `bundle exec jekyll serve`.
+- Modify your theme and content as needed, preview your theme at [http://localhost:4000](http://localhost:4000).
+- Only specific files and directories are bundled. Adjust `mold.gemspec` to include custom directories if necessary.
 
-    const scheduleRemoval = () => {
-        if (exclamations > 0) {
-            setTimeout(() => {
-                exclamations--;
-                updateText();
-                if (exclamations > 0) scheduleRemoval();
-            }, 2000);
-        }
-    };
+## Contributing 🤝
 
-    function startIdleTimer() {
-        idleInterval = setInterval(() => {
-            idleTime++;
-            counterElem.textContent = idleTime;
-            updateMaxTime();
-        }, 1000);
-    }
+Feel free to report bugs or send pull requests over on GitHub at [yree/mold](https://github.com/yree/mold). Please adhere to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
 
-    const updateBreathingBox = () => {
-        const boxContent = "+".repeat(breatheLines) + "-".repeat(maxBreatheLines - breatheLines);
-        breathingBox.textContent = `[${boxContent}] ${breathingLabels[breatheState]}`;
-    };
+## License 📃
 
-    const startInhale = () => {
-        breatheState = 0;
-        breatheLines = 0;
-        breathingInterval = setInterval(() => {
-            if (breatheLines < maxBreatheLines) {
-                breatheLines++;
-                updateBreathingBox();
-            } else {
-                clearInterval(breathingInterval);
-                startHold();
-            }
-        }, 250);
-    };
-
-    const startHold = () => {
-        breatheState = 1;
-        let isBold = false, holdTime = 0;
-        updateBreathingBox();
-        breathingInterval = setInterval(() => {
-            breathingBox.style.fontWeight = isBold ? 'bold' : 'normal';
-            isBold = !isBold;
-            holdTime++;
-            if (holdTime >= 8) {
-                clearInterval(breathingInterval);
-                startExhale();
-            }
-        }, 500);
-    };
-
-    const startExhale = () => {
-        breatheState = 2;
-        breathingInterval = setInterval(() => {
-            if (breatheLines > 0) {
-                breatheLines--;
-                updateBreathingBox();
-            } else {
-                clearInterval(breathingInterval);
-                startInhale();
-            }
-        }, 400);
-    };
-
-    document.onclick = () => {
-        resetCounter();
-        if (exclamations < maxExclamations) {
-            exclamations++;
-            updateText();
-        }
-    };
-
-    document.onmousemove = () => {
-        clearTimeout(mouseTimeout);
-        resetCounter();
-        if (exclamations === 0) {
-            exclamations++;
-            updateText();
-        }
-        mouseTimeout = setTimeout(() => {
-            exclamations--;
-            updateText();
-            if (exclamations > 0) scheduleRemoval();
-        }, 2000);
-    };
-
-    window.onload = function() {
-        startIdleTimer();
-        startInhale();
-    };
-
-</script>
+The theme is available as open source under the terms of the [MIT License](LICENSE).
