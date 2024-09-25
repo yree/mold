@@ -2,11 +2,10 @@
 
 A **m**inimal **o**ptimized **l**ightweight **d**esign for Github Pages.
 
-Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-please).
+Inspired from [no-style-please](https://github.com/riggraz/no-style-please) and [the-monospace-web](https://github.com/owickstrom/the-monospace-web).
 
 > **"Simplicity is the ultimate sophistication."**  
 > -- Leonardo da Vinci
-
 ## Features ✨
 
 - 👀 A WYWIWYS theme (What You Write Is What You See)
@@ -16,14 +15,8 @@ Inspired from [riggraz/no-style-please](https://github.com/riggraz/no-style-plea
 - 📖 Content-first (typography optimized for maximum readability)
 - 🔍 SEO optimized (uses Jekyll SEO Tag)
 - 📰 RSS feed (uses Jekyll Feed)
-- ➗ Mathjax support $$e^{i\pi} = -1$$
+- ➗ Mathjax support
 - 🧜‍♀️ Mermaid support
-
-{% include mermaid.html content="
-graph TD;
-    A-->B;
-    A-->C;"
-%}
 
 ## Usage 🛠️
 
@@ -35,9 +28,7 @@ graph TD;
     remote-theme: yree/mold
     ``` 
 - See site settings to further customize the theme.
-
 ### Organization 📂
-
 - The theme operates on the WYWIWYS (wee-wee-wiz) principle.
 - The `README.md` at the repo root acts as the index for the GitHub Page.
 - To create more posts add `.md` files and folders to your repo.
@@ -63,7 +54,6 @@ graph TD;
 - Start the server with `bundle exec jekyll serve`.
 - Modify your theme and content as needed, preview your theme at [http://localhost:4000](http://localhost:4000).
 - Only specific files and directories are bundled. Adjust `mold.gemspec` to include custom directories if necessary.
-
 
 ## Contributing 🤝
 

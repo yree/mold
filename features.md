@@ -155,13 +155,11 @@ $$
 
 ## 🌊 Mermaid SVG
 
-```mermaid
- gantt
-  title  Adding GANTT diagram functionality to mermaid
-  apple :a, 2017-07-20, 1w
-  banana :crit, b, 2017-07-23, 1d
-  cherry :active, c, after b a, 1d
-```
+{% include mermaid.html content="
+graph TD;
+    A-->B;
+    A-->C;"
+%}
 
 ## Buttons
 
