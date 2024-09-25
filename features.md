@@ -165,7 +165,7 @@ graph TD;
 
 Here are some buttons:
 
-<nav>
+<nav class="grid">
     <button>Reset</button>
     <button>Save</button>
 </nav>
