@@ -1,13 +1,12 @@
 title: mold # name of the site
-author: Shantanu Mishra # name of site's author
-email: dev@8hantanu.net # email of site's author
+author: Yree # name of site's author
+email: mold@yree.io # email of site's author
 url: https://yree.io # root address of the site
 baseurl: "/mold" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
 description: > # description of the site (multiple lines allowed)
   A minimal, optimized, lightweight design for static sites.
 
-footer_content: > #footer of the site
-  ##### [Yree](https://yree.io) made :: [@yree/mold](https://github.com/yree/mold)
+git_repo: yree/mold
 
 permalink: /:slug
 
