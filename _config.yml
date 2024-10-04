@@ -6,6 +6,8 @@ baseurl: "/mold" # subpath of the site, e.g. "/blog" (leave it blank "" if you'r
 description: > # description of the site (multiple lines allowed)
   A minimal, optimized, lightweight design for static sites.
 
+git_repo: yree/mold
+
 permalink: /:slug
 
 favicon: "favicon.svg" # name+extension of favicon (which must be put on the root folder)
