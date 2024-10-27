@@ -1,0 +1,44 @@
+<div class="collection-container">
+  {% assign collection = include.collection %}
+  {% for item in collection %}
+    <div class="collection-item">
+      {% if item.source %}
+      <a href="{{ item.source }}">
+      {% else %}
+      <a href="{{ item.image }}">
+      {% endif %}
+        <img src="{{ item.image }}" alt="{% if item.title %}{{ item.title }}{% else %}Image{% endif %}">
+        {% if item.title or item.description %}
+        <div class="overlay">
+          {% if item.title %}
+            <p><b>{{ item.title }}</b></p>
+          {% endif %}
+          {% if item.description %}
+            <p>{{ item.description }}</p>
+          {% endif %}
+        </div>
+        {% endif %}
+      </a>
+    </div>
+  {% endfor %}
+</div>
+
+<script>
+  // Liquid variable to JavaScript
+  const randomize = {{ include.randomize | default: "false" | json }};
+
+  // Only randomize if `randomize` is true
+  document.addEventListener("DOMContentLoaded", function() {
+    if (randomize) {
+      const container = document.querySelector('.collection-container');
+      const items = Array.from(container.children);
+      
+      // Shuffle items array
+      items.sort(() => Math.random() - 0.5);
+      
+      // Clear container and re-append items in shuffled order
+      container.innerHTML = '';
+      items.forEach(item => container.appendChild(item));
+    }
+  });
+</script>

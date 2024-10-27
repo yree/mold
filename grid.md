@@ -30,17 +30,5 @@ movies:
 
 Here are some of my favorite things across different categories.
 
-<div class="grid-container">
 {% assign collections = page.cars | concat: page.places | concat: page.movies %}
-{% for item in collections %}
-  <div class="grid-item">
-    <a href="{{ item.image }}" target="_blank" class="popup">
-      <img src="{{ item.image }}" alt="{{ item.title }}">
-      <div class="overlay">
-        <p><b>{{ item.title }}</b></p>
-        <p>{{ item.description }}</p>
-      </div>
-    </a>
-  </div>
-{% endfor %}
-</div>
+{% include collection.html collection = collections randomize = true %}
