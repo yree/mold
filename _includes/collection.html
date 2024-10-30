@@ -25,20 +25,30 @@
 
 <script>
   // Liquid variable to JavaScript
-  const randomize = {{ include.randomize | default: "false" | json }};
+  const random = {{ include.randomize | default: "false" | json }};
+
+  // Fisher-Yates shuffle function
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]]; // Swap elements
+    }
+  }
 
   // Only randomize if `randomize` is true
   document.addEventListener("DOMContentLoaded", function() {
-    if (randomize) {
+    if (random) {
       const container = document.querySelector('.collection-container');
-      const items = Array.from(container.children);
-      
-      // Shuffle items array
-      items.sort(() => Math.random() - 0.5);
-      
-      // Clear container and re-append items in shuffled order
-      container.innerHTML = '';
-      items.forEach(item => container.appendChild(item));
+      if (container) { // Check if the container exists
+        const items = Array.from(container.children);
+        
+        // Shuffle items array
+        shuffle(items);
+        
+        // Clear container and re-append items in shuffled order
+        container.innerHTML = '';
+        items.forEach(item => container.appendChild(item));
+      }
     }
   });
 </script>
