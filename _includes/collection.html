@@ -2,19 +2,19 @@
   {% assign collection = include.collection %}
   {% for item in collection %}
     <div class="collection-item">
-      {% if item.source %}
-      <a href="{{ item.source }}">
+      {% if item.refer %}
+      <a href="{{ item.refer }}">
       {% else %}
       <a href="{{ item.image }}">
       {% endif %}
         <img src="{{ item.image }}" alt="{% if item.title %}{{ item.title }}{% else %}Image{% endif %}">
-        {% if item.title or item.description %}
+        {% if item.title or item.about %}
         <div class="overlay">
           {% if item.title %}
             <p><b>{{ item.title }}</b></p>
           {% endif %}
-          {% if item.description %}
-            <p>{{ item.description }}</p>
+          {% if item.about %}
+            <p>{{ item.about }}</p>
           {% endif %}
         </div>
         {% endif %}

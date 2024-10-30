@@ -1,5 +1,6 @@
 ---
 layout: default
+
 cars:
   - title: Porsche 911
     image: https://upload.wikimedia.org/wikipedia/commons/7/7a/1000pistestoivonen84.jpg
@@ -11,7 +12,7 @@ cars:
     refer: https://en.wikipedia.org/wiki/Suzuki_Jimny
 
 places:
-  - title: "Kyoto, Japan
+  - title: Kyoto, Japan
     image: https://upload.wikimedia.org/wikipedia/commons/9/9c/Kan%C5%8D_Eitoku_-_Rakuch%C5%AB_rakugai_zu_%28Uesugi%29_-_right_screen.jpg
     about: An ancient city filled with temples, shrines, and beautiful cherry blossoms.
     refer: https://en.wikipedia.org/wiki/Kyoto
