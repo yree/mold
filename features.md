@@ -1,5 +1,34 @@
 ---
 layout: default
+cars:
+  - title: Porsche 911
+    image: https://upload.wikimedia.org/wikipedia/commons/7/7a/1000pistestoivonen84.jpg
+    about: A classic sports car known for its iconic design and high performance.
+    refer: https://en.wikipedia.org/wiki/Porsche_911
+  - title: Suzuki Jimny
+    image: https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/2019_Suzuki_Jimny_SZ5_4X4_Automatic_1.5.jpg/1920px-2019_Suzuki_Jimny_SZ5_4X4_Automatic_1.5.jpg
+    about: A compact, rugged SUV known for its off-road capabilities and distinctive boxy design.
+    refer: https://en.wikipedia.org/wiki/Suzuki_Jimny
+
+places:
+  - title: "Kyoto, Japan
+    image: https://upload.wikimedia.org/wikipedia/commons/9/9c/Kan%C5%8D_Eitoku_-_Rakuch%C5%AB_rakugai_zu_%28Uesugi%29_-_right_screen.jpg
+    about: An ancient city filled with temples, shrines, and beautiful cherry blossoms.
+    refer: https://en.wikipedia.org/wiki/Kyoto
+  - title: Santorini, Greece
+    image: https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Santorini_island_in_Greece.jpg/1280px-Santorini_island_in_Greece.jpg
+    about: A stunning island with white-washed buildings, blue domes, and breathtaking views.
+    refer: https://en.wikipedia.org/wiki/Santorini
+
+movies:
+  - title: Inception
+    image: https://upload.wikimedia.org/wikipedia/en/2/2e/Inception_%282010%29_theatrical_poster.jpg
+    about: A sci-fi thriller that explores the complexities of dreams within dreams.
+    refer: https://en.wikipedia.org/wiki/Inception
+  - title: The Shawshank Redemption
+    image: https://upload.wikimedia.org/wikipedia/en/8/81/ShawshankRedemptionMoviePoster.jpg
+    about: A powerful story of hope and friendship set within a prison.
+    refer: https://en.wikipedia.org/wiki/The_Shawshank_Redemption
 ---
 
 # 🌟 Features
@@ -160,6 +189,13 @@ graph TD;
     A-->B;
     A-->C;"
 %}
+
+## Collections
+
+Define your collection in the YAML front matter and have it displayed as a collection grid.
+
+{% assign collections = page.cars | concat: page.places | concat: page.movies %}
+{% include collection.html collection = collections randomize = true %}
 
 ## Buttons
 
