@@ -76,6 +76,26 @@ a {
 }
 
 // ------------------- TYPOGRAPHY ------------------- //
+
+h1 {
+  font-size: 32px;
+}
+h2 {
+  font-size: 29px;
+}
+h3 {
+  font-size: 26px;
+}
+h4 {
+  font-size: 23px;
+}
+h5 {
+  font-size: 20px;
+}
+h6 {
+  font-size: 17px;
+}
+
 h2, h3, h4, h5, h6 {
   margin-top: $spacing-base * 2;
 }
@@ -118,6 +138,7 @@ img {
 footer {
   flex-shrink: 0;
   padding: 0 $spacing-base $spacing-base;
+  font-weight: bold;
 }
 
 // ------------------- FORMS ------------------- //
