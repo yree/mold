@@ -199,6 +199,57 @@ fieldset {
   }
 }
 
+// Add radio and checkbox styles
+input[type="radio"],
+input[type="checkbox"] {
+  width: 2ch;
+  height: 2ch;
+  margin: 0;
+  box-shadow: none;
+  cursor: pointer;
+  position: relative;
+  appearance: none;
+  border: $border-thickness solid $text-color;
+  background: $background-color;
+  vertical-align: middle;
+  margin-bottom: 0.2ch;
+
+  &:checked {
+    background: $text-color;
+    
+    &::after {
+      content: '';
+      display: block;
+      background: $background-color;
+    }
+  }
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+  
+  &:checked::after {
+    width: 1ch;
+    height: 1ch;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+input[type="checkbox"] {
+  &:checked::after {
+    width: 1ch;
+    height: 1ch;
+    border-left: $border-thickness solid $background-color;
+    border-bottom: $border-thickness solid $background-color;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+  }
+}
+
 // ------------------- CODE & TABLES ------------------- //
 code {
   color: $text-color;
