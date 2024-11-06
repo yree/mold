@@ -133,6 +133,10 @@ fi;
   "colors/dark-typography";
 ```
 
+## 💻 Keyboard Input
+
+Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy, <kbd>Ctrl</kbd> + <kbd>V</kbd> to paste.
+
 ## ➗ Mathematics
 
 The mathematics powered by [**MathJax**](https://www.mathjax.org/):
