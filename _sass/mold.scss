@@ -179,7 +179,6 @@ button {
   }
 
   &:active:not(:disabled) {
-    transform: translate($shadow-width, $shadow-width);
     box-shadow: none;
   }
 }
