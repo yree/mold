@@ -182,7 +182,15 @@ And some forms:
 <label>First name <input type="text" placeholder="Placeholder..." /></label>
 <label>Last name <input type="text" placeholder="Text goes here..." /></label>
 <label>Age <input type="text" value="30" /></label>
+
 </form>
+
+<fieldset>
+  <legend>Choose programming language</legend>
+  <label><input type="radio" name="lang" value="python"> Python</label>
+  <label><input type="radio" name="lang" value="javascript"> JavaScript</label>
+  <label><input type="radio" name="lang" value="ruby"> Ruby</label>
+</fieldset>
 
 ## Grids
 
@@ -206,7 +214,16 @@ A short summary, see full.
 The full description of the contents
 </p>
 </details>
-        
+
+## 📊 Meters and Progress
+
+### Meter
+<label>Storage usage: <meter value="2" min="0" max="10">2 out of 10</meter></label>
+<label>Completion rate: <meter value="0.6">60%</meter></label>
+
+### Progress
+<label>Download progress: <progress value="70" max="100">70%</progress></label>
+
 ## 🔄 Reverse Footnote
 
 [^footnote]: The footnote source

@@ -144,7 +144,7 @@ footer {
 }
 
 // ------------------- FORMS ------------------- //
-input, button, textarea {
+input, button, textarea, fieldset {
   border: $border-thickness solid $text-color;
   padding: $line-height;
   margin: 0;
@@ -153,7 +153,7 @@ input, button, textarea {
   width: 100%;
 }
 
-input {
+input, textarea {
   width: calc(round(down, 100%, 1ch));
   box-shadow: inset $shadow-width $shadow-width 0 $text-color;
 }
@@ -174,13 +174,28 @@ button {
   background: $background-color;
   box-shadow: $shadow-width $shadow-width 0 $text-color;
 
-  &:hover {
+  &:hover:not(:disabled) {
     background: $background-color-alt;
   }
 
-  &:active {
+  &:active:not(:disabled) {
     transform: translate($shadow-width, $shadow-width);
     box-shadow: none;
+  }
+}
+
+// Add new fieldset styles
+fieldset {
+  margin-bottom: $spacing-base * 2;
+  
+  legend {
+    padding: 0 $spacing-base;
+    font-weight: $font-weight-medium;
+  }
+  
+  // Remove double borders when fieldsets are nested
+  fieldset {
+    margin: $spacing-base 0;
   }
 }
 
@@ -195,6 +210,7 @@ kbd {
   color: $text-color;
   background: $background-color-alt;
   border: $border-thickness solid $text-color;
+  border-radius: 0.25ch;
   padding: 0 0.5ch;
   font-size: 0.9em;
   box-shadow: 0 $shadow-width 0 $text-color;
@@ -228,6 +244,7 @@ details {
   border: $border-thickness solid $text-color;
   padding: 1ch;
   margin-bottom: $line-height;
+  box-shadow: $shadow-width $shadow-width 0 $text-color;
 }
 
 summary {
@@ -273,6 +290,41 @@ iframe[loading="lazy"] {
 
   &:loaded {
     opacity: 1;
+  }
+}
+
+// ------------------- METER & PROGRESS ------------------- //
+meter, progress {
+  width: 100%;
+  height: 2ch;
+  border: $border-thickness solid $text-color;
+  background: $background-color;
+}
+
+meter {
+  &::-webkit-meter-bar {
+    background: $background-color;
+  }
+  
+  &::-webkit-meter-optimum-value,
+  &::-webkit-meter-suboptimum-value,
+  &::-webkit-meter-even-less-good-value {
+    background: $text-color;
+  }
+  
+  &::-moz-meter-bar {
+    background: $text-color;
+  }
+}
+
+progress {
+  &::-webkit-progress-bar {
+    background: $background-color;
+  }
+
+  &::-webkit-progress-value,
+  &::-moz-progress-bar {
+    background: $text-color;
   }
 }
 
