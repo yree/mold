@@ -20,7 +20,7 @@ $spacing-base: 1ch;
 $max-width: calc(min(80ch, round(down, 100%, 1ch)));
 $grid-gap: 1ch;
 
-$shadow-width: 0.4ch;
+$shadow-width: 0.3ch;
 $transition-time: 0.1s;
 
 // ------------------- THEME SWITCHER ------------------- //
@@ -410,4 +410,21 @@ progress {
       --grid-cells: #{$i};
     }
   }
+}
+
+// ------------------- PRINT STYLES ------------------- //
+@media print {
+  footer { 
+    display: none; 
+  }
+  
+  body {
+    font-size: 11pt;
+    line-height: 1.3;
+  }
+  
+  h1 { font-size: 18pt; }
+  h2 { font-size: 16pt; }
+  h3 { font-size: 14pt; }
+  h4, h5, h6 { font-size: 12pt; }
 }
