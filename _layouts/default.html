@@ -50,10 +50,18 @@
       {%- if site.footer_content -%}
         {{ site.footer_content | markdownify }}
       {%- else -%}
-          {% if site.git_repo %}
-            <a href="https://github.com/{{ site.git_repo }}">@{{ site.git_repo }}</a> :: 
+          {% if site.url contains "yree" %}
+            <a href="{{ site.url }}">
+              <img src="https://raw.githubusercontent.com/yree/dump/refs/heads/main/yree/yree-font-smol.svg">
+            </a> ::
           {% endif %}
-          <a href="{{ site.url }}">{{ site.author }}</a> :: <a href="https://yree.io/mold">molded</a> for you ♥
+          {% if site.git_repo %}
+            <a href="https://github.com/{{ site.git_repo }}">@{{ site.git_repo }}</a> ::
+          {% endif %}
+          {% if site.author %}
+            <a href="{{ site.url }}">{{ site.author }}</a> ::
+          {% endif %}
+          <a href="https://yree.io/mold">molded</a> for you ♥
       {%- endif -%}
     </div>
   </footer>

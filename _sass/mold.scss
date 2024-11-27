@@ -128,6 +128,12 @@ img {
   margin: 0 auto;
 }
 
+footer img {
+  height: 2.9ch;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
 // ------------------- LAYOUT & SPACING ------------------- //
 .w {
   max-width: $max-width;
