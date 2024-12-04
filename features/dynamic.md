@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # 🌌 The Magical Interfaces in the Dynamic Land
 
 Enter the [md realm](dynamic.md).

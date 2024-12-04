@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # 🌟 The Incredible Journey into Static Land
 
 Enter the [md realm](static.md).
