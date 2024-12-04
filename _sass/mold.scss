@@ -28,7 +28,7 @@ $transition-time: 0.1s;
   filter: invert(1) hue-rotate(180deg);
 
   img {
-    filter: inherit;
+    filter: invert(1) hue-rotate(180deg);
 
     &.ioda {
       filter: invert(0);
