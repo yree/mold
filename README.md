@@ -9,7 +9,6 @@ Inspired from [no-style-please](https://github.com/riggraz/no-style-please) and 
 
 ## Features ✨
 
-- 👀 A WYWIWYS theme (What You Write Is What You See)
 - ⚡️ Fast
 - 🌓 Light and dark theme
 - 📱 Responsive
@@ -18,6 +17,11 @@ Inspired from [no-style-please](https://github.com/riggraz/no-style-please) and 
 - 📰 RSS feed (uses Jekyll Feed)
 - ➗ Mathjax support
 - 🧜‍♀️ Mermaid support
+
+Explore all the features:
+
+- [🌟 Static Land](static.md) - Journey through the structured and stable elements.
+- [🌌 Dynamic Land](dynamic.md) - Discover the interactive elements and magical interfaces.
 
 ## Usage 🛠️
 

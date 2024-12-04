@@ -2,216 +2,169 @@
 layout: default
 ---
 
-# 🌟 Dynamic Features
+# 🌌 The Magical Interfaces in the Dynamic Land
 
-## Buttons
+Enter the [md realm](dynamic.md).
 
-Here are some buttons:
+## 🎮 Buttons: Portals of Power
+
+Behold, brave adventurer! These are not mere buttons, but magical portals of action:
 
 <nav class="grid">
-    <button>Reset</button>
-    <button class="primary">Save</button>
+    <button>Reset the Enchantment</button>
+    <button class="primary">Save the Spell</button>
 </nav>
 
-## Forms
+## 📝 Forms: The Scrolls of Identity
 
-Basic form elements:
+Prepare to inscribe your essence into the mystical scrolls of knowledge!
 
 <form class="grid">
-<label>First name <input type="text" placeholder="Placeholder..." /></label>
-<label>Last name <input type="text" placeholder="Text goes here..." /></label>
-<label>Age <input type="text" value="30" /></label>
+<label>First Name of Power <input type="text" placeholder="Whisper your name..." /></label>
+<label>Ancestral Name <input type="text" placeholder="Your lineage speaks..." /></label>
+<label>Years of Wisdom <input type="text" value="30" /></label>
 </form>
 
-### Radio Button Group
+### 🔮 Multiple Form Types: Portals of Input
 
-<fieldset>
-  <legend>Choose programming language</legend>
-  <label><input type="radio" name="lang" value="python"> Python</label>
-  <label><input type="radio" name="lang" value="javascript"> JavaScript</label>
-  <label><input type="radio" name="lang" value="ruby"> Ruby</label>
-</fieldset>
-
-### Input Fields
+Diverse magical entry points await your touch!
 
 <form>
     <fieldset id="forms__input">
-        <legend>Input fields</legend>
+        <legend>🏰 Chambers of Input</legend>
     
         <div class="table rows">
             <p>
-                <label for="input__text">Text Input</label>
-                <input id="input__text" type="text" placeholder="Text Input">
+                <label for="input__text">Whisper Your Thoughts</label>
+                <input id="input__text" type="text" placeholder="Thoughts materialize here">
             </p>
             <p>
-                <label for="input__password">Password</label>
-                <input id="input__password" type="password" placeholder="Type your Password">
+                <label for="input__password">Secret Incantation</label>
+                <input id="input__password" type="password" placeholder="Hidden words of power">
             </p>
             <p>
-                <label for="input__webaddress">Web Address</label>
-                <input id="input__webaddress" type="url" placeholder="https://yoursite.com">
+                <label for="input__webaddress">Realm's Gateway</label>
+                <input id="input__webaddress" type="url" placeholder="https://your-magical-realm.com">
             </p>
             <p>
-                <label for="input__emailaddress">Email Address</label>
-                <input id="input__emailaddress" type="email" placeholder="name@email.com">
+                <label for="input__emailaddress">Mystical Correspondence</label>
+                <input id="input__emailaddress" type="email" placeholder="wizard@spellcraft.realm">
             </p>
             <p>
-                <label for="input__phone">Phone Number</label>
-                <input id="input__phone" type="tel" placeholder="(999) 999-9999">
+                <label for="input__phone">Runestone Communication</label>
+                <input id="input__phone" type="tel" placeholder="(999) Spell-Cast">
             </p>
             <p>
-                <label for="input__search">Search</label>
-                <input id="input__search" type="search" placeholder="Enter Search Term">
+                <label for="input__search">Crystal Ball Search</label>
+                <input id="input__search" type="search" placeholder="Seek and reveal">
             </p>
             <p>
-                <label for="input__text2">Number Input</label>
-                <input id="input__text2" type="number" placeholder="Enter a Number">
+                <label for="input__text2">Numerical Essence</label>
+                <input id="input__text2" type="number" placeholder="Quantify your magic">
             </p>
             <p>
-                <label for="input__file">File Input</label>
+                <label for="input__file">Scroll Upload</label>
                 <input id="input__file" type="file">
             </p>
         </div>
     </fieldset>
 
     <fieldset id="forms__select">
-        <legend>Select menus</legend>
+        <legend>📜 Magical Menus of Choice</legend>
         <p>
-            <label for="select">Select</label>
+            <label for="select">Select Your Destiny</label>
             <select id="select">
-                <optgroup label="Option Group">
-                    <option>Option One</option>
-                    <option>Option Two</option>
-                    <option>Option Three</option>
+                <optgroup label="Paths of Destiny">
+                    <option>Path of Wisdom</option>
+                    <option>Path of Courage</option>
+                    <option>Path of Mystery</option>
                 </optgroup>
             </select>
         </p>
         <p>
-            <label for="select_multiple">Select (multiple)</label>
+            <label for="select_multiple">Multiverse of Options</label>
             <select id="select_multiple" multiple="multiple">
-                <optgroup label="Option Group">
-                    <option>Option One</option>
-                    <option>Option Two</option>
-                    <option>Option Three</option>
+                <optgroup label="Parallel Realities">
+                    <option>Reality One</option>
+                    <option>Reality Two</option>
+                    <option>Reality Three</option>
                 </optgroup>
             </select>
         </p>
     </fieldset>
 
     <fieldset id="forms__checkbox">
-        <legend>Checkboxes</legend>
+        <legend>✨ Magical Choices</legend>
         <ul>
-            <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> Choice A</label></li>
-            <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Choice B</label></li>
-            <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Choice C</label></li>
+            <li><label for="checkbox1"><input id="checkbox1" name="checkbox" type="checkbox" checked="checked"> Enchantment A</label></li>
+            <li><label for="checkbox2"><input id="checkbox2" name="checkbox" type="checkbox"> Enchantment B</label></li>
+            <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Enchantment C</label></li>
         </ul>
     </fieldset>
     
     <fieldset id="forms__radio">
-        <legend>Radio buttons</legend>
+        <legend>🌀 Mystical Choices</legend>
         <ul>
-            <li><label for="radio1"><input id="radio1" name="radio" type="radio" checked="checked"> Option 1</label></li>
-            <li><label for="radio2"><input id="radio2" name="radio" type="radio"> Option 2</label></li>
-            <li><label for="radio3"><input id="radio3" name="radio" type="radio"> Option 3</label></li>
+            <li><label for="radio1"><input id="radio1" name="radio" type="radio" checked="checked"> Destiny 1</label></li>
+            <li><label for="radio2"><input id="radio2" name="radio" type="radio"> Destiny 2</label></li>
+            <li><label for="radio3"><input id="radio3" name="radio" type="radio"> Destiny 3</label></li>
         </ul>
     </fieldset>
     
-    <fieldset id="forms__textareas"><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: -1px; left: -1px; pointer-events: none;" class="dnXmp"></grammarly-extension><grammarly-extension data-grammarly-shadow-root="true" style="position: absolute; top: -1px; left: -1px; pointer-events: none;" class="dnXmp"></grammarly-extension>
-        <legend>Textareas</legend>
+    <fieldset id="forms__textareas">
+        <legend>📖 Scrolls of Infinite Writing</legend>
         <p>
-            <label for="textarea">Textarea</label>
-            <textarea id="textarea" rows="8" cols="48" placeholder="Enter your message here" spellcheck="false"></textarea>
+            <label for="textarea">Chronicle Your Journey</label>
+            <textarea id="textarea" rows="8" cols="48" placeholder="Write your epic tale here" spellcheck="false"></textarea>
         </p>
     </fieldset>
     
     <fieldset id="forms__html5" class="table rows">
-        <legend>HTML5 inputs</legend>
+        <legend>🔗 Elemental Inputs</legend>
         <p>
-            <label for="ic">Color input</label>
+            <label for="ic">Color of Magic</label>
             <input type="color" id="ic" value="#000000">
         </p>
         <p>
-            <label for="in">Number input</label>
+            <label for="in">Magical Intensity</label>
             <input type="number" id="in" min="0" max="10" value="5">
         </p>
         <p>
-            <label for="ir">Range input</label>
+            <label for="ir">Power Spectrum</label>
             <input type="range" id="ir" value="10">
         </p>
         <p>
-            <label for="idd">Date input</label>
+            <label for="idd">Temporal Anchor</label>
             <input type="date" id="idd" value="1970-01-01">
         </p>
-        <p>
-            <label for="idm">Month input</label>
-            <input type="month" id="idm" value="1970-01">
-        </p>
-        <p>
-            <label for="idw">Week input</label>
-            <input type="week" id="idw" value="1970-W01">
-        </p>
-        <p>
-            <label for="idt">Datetime input</label>
-            <input type="datetime" id="idt" value="1970-01-01T00:00:00Z">
-        </p>
-        <p>
-            <label for="idtl">Datetime-local input</label>
-            <input type="datetime-local" id="idtl" value="1970-01-01T00:00">
-        </p>
-        <p>
-            <label for="idl">Datalist</label>
-            <input type="text" id="idl" list="example-list">
-            <datalist id="example-list">
-                <option value="Example #1">
-                </option><option value="Example #2">
-                </option><option value="Example #3">
-            </option></datalist>
-        </p>
-        <div role="radiogroup" aria-labelledby="radio-buttons-lbl">
-            <span id="radio-buttons-lbl">Radio buttons</span>
-            <div>
-                <div><label for="radiobtn1">
-                    <input type="radio" name="radiobtn" id="radiobtn1">
-                    Option 1</label>
-                </div>
-                <div><label for="radiobtn2">
-                    <input type="radio" name="radiobtn" id="radiobtn2">
-                    Option 2</label>
-                </div>
-                <div><label for="radiobtn3">
-                    <input type="radio" name="radiobtn" id="radiobtn3">
-                    Option 3</label>
-                </div>
-            </div>
-        </div>
     </fieldset>
 </form>
 
-## Grids
+## 🏗️ Magical Grids: Realms of Symmetry
 
-Add the `grid` class to a container to divide up the horizontal space evenly:
+Witness the balanced energies of the multiverse:
 
 <input readonly value="1" />
 <div class="grid"><input readonly value="1" /><input readonly value="2" /></div>
 <div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /></div>
 <div class="grid"><input readonly value="1" /><input readonly value="2" /><input readonly value="3" /><input readonly value="4" /></div>
 
-## Details and Summary
+## 🔍 Secrets and Revelations
 
 <details>
 <summary>
-A short summary, see full.
+A Glimpse of Mystery
 </summary>
 <p>
-The full description of the contents
+The full revelation awaits those who dare to look deeper
 </p>
 </details>
 
-## 📊 Meters and Progress
+## 📊 Mystical Measurements
 
-### Meter
-<label>Storage usage: <meter value="2" min="0" max="10">2 out of 10</meter></label>
-<label>Completion rate: <meter value="0.6">60%</meter></label>
+### 🪄 Magical Meters
+<label>Spell Energy: <meter value="2" min="0" max="10">2 out of 10 magical potential</meter></label>
+<label>Destiny's Completion: <meter value="0.6">60% of fate unveiled</meter></label>
 
-### Progress
-<label>Download progress: <progress value="70" max="100">70%</progress></label>
+### ⚡ Magical Progress
+<label>Ritual Completion: <progress value="70" max="100">70% of the magical ceremony complete</progress></label>
