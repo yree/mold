@@ -20,8 +20,8 @@ Inspired from [no-style-please](https://github.com/riggraz/no-style-please) and 
 
 Explore all the features:
 
-- [🌟 Static Land](static.md) - Journey through the structured and stable elements.
-- [🌌 Dynamic Land](dynamic.md) - Discover the interactive elements and magical interfaces.
+- [🌟 Static Land](features/static) - Journey through the structured and stable elements.
+- [🌌 Dynamic Land](features/dynamic) - Discover the interactive elements and magical interfaces.
 
 ## Usage 🛠️
 
