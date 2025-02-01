@@ -1,6 +1,6 @@
 # mold 🍄
 
-A **m**inimal **o**ptimized **l**ightweight **d**esign for Github Pages.
+**A minimal optimized lightweight design.**
 
 Inspired from [no-style-please](https://github.com/riggraz/no-style-please) and [the-monospace-web](https://github.com/owickstrom/the-monospace-web).
 
@@ -16,12 +16,12 @@ Inspired from [no-style-please](https://github.com/riggraz/no-style-please) and 
 - 🔍 SEO optimized (uses Jekyll SEO Tag)
 - 📰 RSS feed (uses Jekyll Feed)
 - ➗ Mathjax support
-- 🧜‍♀️ Mermaid support
+- 🧜 Mermaid support
 
 Explore all the features:
 
-- [🌟 Static Land](features/static) - Journey through the structured and stable elements.
-- [🌌 Dynamic Land](features/dynamic) - Discover the interactive elements and magical interfaces.
+- 🌟 [Static Land](features/static) - Journey through the structured and stable elements.
+- 🌌 [Dynamic Land](features/dynamic) - Discover the interactive elements and magical interfaces.
 
 ## Usage 🛠️
 
