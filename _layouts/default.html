@@ -27,6 +27,12 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
     <!-- Mermaid -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" async></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const emojiRegex = /([\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F900}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{2702}\u{1F004}\u{1F0CF}\u{1F191}-\u{1F251}])/gu;
+        document.body.innerHTML = document.body.innerHTML.replace(emojiRegex, '<span class="emoji">$1</span>');
+      });
+    </script>
   </head>
   <body a="{{ site.theme_config.appearance | default: "auto" }}">
     <main class="content" aria-label="Content">
