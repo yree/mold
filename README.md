@@ -9,7 +9,7 @@ Inspired from [no-style-please](https://github.com/riggraz/no-style-please) and 
 
 ## Features ✨
 
-- ⚡️ Fast
+- ⚡ Fast
 - 🌓 Light and dark theme
 - 📱 Responsive
 - 📖 Content-first (typography optimized for maximum readability)
@@ -23,9 +23,9 @@ Explore all the features:
 - 🌟 [Static Land](features/static) - Journey through the structured and stable elements.
 - 🌌 [Dynamic Land](features/dynamic) - Discover the interactive elements and magical interfaces.
 
-## Usage 🛠️
+## Usage 🛠
 
-### Setup 🏗️
+### Setup 🏗
 
 - Create a github pages repo, see [steps](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
 - Add a `_config.yml` file (or copy the one from this repo), and insert below line:

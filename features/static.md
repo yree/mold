@@ -6,10 +6,10 @@ Enter the [md realm](static.md).
 
 Welcome, brave explorer! Our journey through the land of Markdown is like climbing a magical mountain of knowledge. Each heading is a different level of our expedition:
 
-# 🏔️ H1 - The Grand Summit (Our main quest!)
-## 🏕️ H2 - Base Camp (Where our strategy takes shape)
+# 🏔 H1 - The Grand Summit (Our main quest!)
+## 🏕 H2 - Base Camp (Where our strategy takes shape)
 ### 🔍 H3 - Exploration Zone (Diving into details)
-#### 🛤️ H4 - Secret Pathways (Hidden insights)
+#### 🛤 H4 - Secret Pathways (Hidden insights)
 ##### 📜 H5 - Whispered Legends (Subtle nuances)
 ###### 🪙 H6 - Tiny Treasures (Smallest discoveries)
 
@@ -61,7 +61,7 @@ Moon
 
 The journey continues beyond known horizons.
 
-## 🖼️ Images: Capturing Memories
+## 🖼 Images: Capturing Memories
 
 Move while you can in the day:
 ![Day Landscape](https://media.githubusercontent.com/media/yree/dump/refs/heads/main/yree/yree-cover.png)
@@ -71,7 +71,7 @@ As the darkness spreads at night:
 
 ## 📊 Tables: Expedition Log
 
-| 🧭 Expedition Team | 🛠️ Role           | 🌟 Specialty |
+| 🧭 Expedition Team | 🛠 Role           | 🌟 Specialty |
 | :---------------- | :---------------- | -----------: |
 | Maria Anders      | Lead Navigator   | Cartography  |
 | Helen Bennett     | Tech Specialist  | Communication|
@@ -103,7 +103,7 @@ if [ $? -ne 0 ]; then
 fi;
 ```
 
-### ⌨️ Keyboard Runes
+### ⌨ Keyboard Runes
 Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to capture knowledge, <kbd>Ctrl</kbd> + <kbd>V</kbd> to share wisdom.
 
 ## ➗ Mathematics: The Universal Language

@@ -136,7 +136,7 @@ Diverse magical entry points await your touch!
     </fieldset>
 </form>
 
-## 🏗️ Magical Grids: Realms of Symmetry
+## 🏗 Magical Grids: Realms of Symmetry
 
 Witness the balanced energies of the multiverse:
 
