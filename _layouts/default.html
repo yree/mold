@@ -58,14 +58,11 @@
       {%- if site.footer_content -%}
         {{ site.footer_content | markdownify }}
       {%- else -%}
-          {% if site.url contains "yree" %}
-            <a href="{{ site.url }}">Yree</a> —
+          {% if site.author %}
+            <a href="{{ site.url }}">{{ site.author }}</a> —
           {% endif %}
           {% if site.git_repo %}
             <a href="https://github.com/{{ site.git_repo }}">@{{ site.git_repo }}</a> —
-          {% endif %}
-          {% if site.author %}
-            <a href="{{ site.url }}">{{ site.author }}</a> —
           {% endif %}
           <a href="https://yree.io/mold">molded</a> for you 🫶
       {%- endif -%}
