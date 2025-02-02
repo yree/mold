@@ -27,12 +27,14 @@
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
     <!-- Mermaid -->
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" async></script>
+    {%- unless site.theme_config.color_emoji -%}
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const emojiRegex = /([\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F900}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{2702}\u{1F004}\u{1F0CF}\u{1F191}-\u{1F251}\u{1F1E6}-\u{1F1FF}\u{200D}\u{2620}\u{26A7}\u{FE0F}\u{1F308}\u{1F38C}\u{1F3C1}\u{1F3F3}-\u{1F3F4}\u{1F6A9}\u{E0062}-\u{E007F}\u{1FA00}-\u{1FAFF}])/gu;
         document.body.innerHTML = document.body.innerHTML.replace(emojiRegex, '<span class="emoji">$1</span>');
       });
     </script>
+    {%- endunless -%}
   </head>
   <body a="{{ site.theme_config.appearance | default: "auto" }}">
     <main class="content" aria-label="Content">
@@ -57,9 +59,7 @@
         {{ site.footer_content | markdownify }}
       {%- else -%}
           {% if site.url contains "yree" %}
-            <a href="{{ site.url }}">
-              <img class="ioda" src="https://raw.githubusercontent.com/yree/dump/refs/heads/main/yree/yree-font-smol.svg">
-            </a> —
+            <a href="{{ site.url }}">Yree</a> —
           {% endif %}
           {% if site.git_repo %}
             <a href="https://github.com/{{ site.git_repo }}">@{{ site.git_repo }}</a> —
@@ -67,7 +67,7 @@
           {% if site.author %}
             <a href="{{ site.url }}">{{ site.author }}</a> —
           {% endif %}
-          <a href="https://yree.io/mold">molded</a> for you ♥
+          <a href="https://yree.io/mold">molded</a> for you 🫶
       {%- endif -%}
     </div>
   </footer>

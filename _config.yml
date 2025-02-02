@@ -1,5 +1,5 @@
 title: mold # name of the site
-author:  # name of site's author
+author: Shantanu Mishra # name of site's author
 email: mold@yree.io # email of site's author
 url: https://yree.io # root address of the site
 baseurl: "/mold" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
@@ -10,14 +10,15 @@ git_repo: yree/mold
 
 permalink: /:slug
 
-favicon: "favicon.svg" # name+extension of favicon (which must be put on the root folder)
-# goat_counter: "yoursitename" # put your GoatCounter name if you want to use GoatCounter analytics
+favicon: favicon.svg # name+extension of favicon (which must be put on the root folder)
+goat_counter: yree # put your GoatCounter name if you want to use GoatCounter analytics
 
 # theme: mold # if you are using GitHub Pages, change it to remote_theme: yree/mold
 remote_theme: yree/mold
 
 theme_config:
   appearance: "auto" # can be "light", "dark" or "auto"
+  color_emoji: false # set to true for color emojis
 
 sass:
   style: :compressed
@@ -25,4 +26,3 @@ sass:
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
-
