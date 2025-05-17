@@ -40,17 +40,25 @@ img {
 }
 
 /* ------------------- THEME SWITCHER ------------------- */
+html[a="dark"] img, body[a="dark"] img {
+    filter: invert(1) hue-rotate(180deg)
+}
+
+html[a="dark"] img.ioda, body[a="dark"] img.ioda {
+    filter:invert(0)
+}
+
 @media (prefers-color-scheme: dark) {
-    html, body {
-        filter: invert(1) hue-rotate(180deg);
+    html[a="auto"], body[a="auto"] {
+        filter: invert(1) hue-rotate(180deg)
     }
 
-    img {
-        filter: invert(1) hue-rotate(180deg);
+    html[a="auto"] img, body[a="auto"] img {
+        filter: invert(1) hue-rotate(180deg)
     }
 
-    img.ioda {
-        filter: invert(0);
+    html[a="auto"] img.ioda, body[a="auto"] img.ioda {
+        filter:invert(0)
     }
 }
 
