@@ -28,7 +28,7 @@ Diverse magical entry points await your touch!
 <form>
     <fieldset id="forms__input">
         <legend>🏰 Chambers of Input</legend>
-    
+
         <div class="table rows">
             <p>
                 <label for="input__text">Whisper Your Thoughts</label>
@@ -97,7 +97,7 @@ Diverse magical entry points await your touch!
             <li><label for="checkbox3"><input id="checkbox3" name="checkbox" type="checkbox"> Enchantment C</label></li>
         </ul>
     </fieldset>
-    
+
     <fieldset id="forms__radio">
         <legend>🌀 Mystical Choices</legend>
         <ul>
@@ -106,7 +106,7 @@ Diverse magical entry points await your touch!
             <li><label for="radio3"><input id="radio3" name="radio" type="radio"> Destiny 3</label></li>
         </ul>
     </fieldset>
-    
+
     <fieldset id="forms__textareas">
         <legend>📖 Scrolls of Infinite Writing</legend>
         <p>
@@ -114,7 +114,7 @@ Diverse magical entry points await your touch!
             <textarea id="textarea" rows="8" cols="48" placeholder="Write your epic tale here" spellcheck="false"></textarea>
         </p>
     </fieldset>
-    
+
     <fieldset id="forms__html5" class="table rows">
         <legend>🔗 Elemental Inputs</legend>
         <p>
@@ -164,3 +164,21 @@ The full revelation awaits those who dare to look deeper
 
 ### ⚡ Magical Progress
 <label>Ritual Completion: <progress value="70" max="100">70% of the magical ceremony complete</progress></label>
+
+## 🎴 Cards: Vessels of Knowledge
+
+Explore these mystical containers of wisdom:
+
+<div class="grid">
+
+<div class="card">
+  <b>🌟 Enchanted Spells</b>
+  <p>This card is <i>not clickable</i>. It contains ancient incantations and magical formulae preserved through the ages.</p>
+</div>
+
+<div href="#" class="card">
+  <b>🔮 Crystal Repository</b>
+  <p>This card is <i>clickable</i>. It leads to a collection of mystical crystals and their ethereal properties.</p>
+</div>
+
+</div>
