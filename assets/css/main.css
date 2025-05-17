@@ -39,12 +39,6 @@ img {
     height: auto;
 }
 
-footer img {
-  height: 2.9ch;
-  display: inline-block;
-  vertical-align: bottom;
-}
-
 /* ------------------- THEME SWITCHER ------------------- */
 html[a="dark"] img, body[a="dark"] img {
     filter: invert(1) hue-rotate(180deg)
@@ -156,6 +150,12 @@ img {
     max-width: 100%;
     display: block;
     margin: 0 auto;
+}
+
+footer img {
+  height: 2.9ch;
+  display: inline-block;
+  vertical-align: bottom;
 }
 
 /* ------------------- LAYOUT & SPACING ------------------- */
