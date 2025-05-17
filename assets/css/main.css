@@ -156,7 +156,6 @@ img {
 }
 
 footer {
-    font-size: 0.8rem;
     flex-shrink: 0;
     padding: 0 var(--spacing-base) var(--spacing-base);
 }
