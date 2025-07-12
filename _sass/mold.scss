@@ -1,0 +1,467 @@
+// ------------------- FONTS ------------------- //
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@300..700&display=swap');
+
+// ------------------- VARIABLES ------------------- //
+$font-family: "JetBrains Mono", monospace;
+$line-height: 1ch;
+$border-thickness: 0.2ch;
+$text-color: black;
+$text-color-alt: dimgrey;
+$background-color: white;
+$background-color-alt: lightgrey;
+$shadow-color: black;
+$link-color: blue;
+
+$font-weight-normal: 400;
+$font-weight-medium: 600;
+$font-weight-bold: 800;
+
+$spacing-base: 1ch;
+$max-width: calc(min(80ch, round(down, 100%, 1ch)));
+$grid-gap: 1ch;
+
+$shadow-width: 0.3ch;
+$transition-time: 0.1s;
+
+// ------------------- THEME SWITCHER ------------------- //
+@mixin dark-appearance {
+  filter: invert(1) hue-rotate(180deg);
+
+  img {
+    filter: invert(1) hue-rotate(180deg);
+
+    &.ioda {
+      filter: invert(0);
+    }
+  }
+}
+
+html[a="dark"], body[a="dark"] {
+  @include dark-appearance;
+}
+
+@media (prefers-color-scheme: dark) {
+  html[a="auto"], body[a="auto"] {
+    @include dark-appearance;
+  }
+}
+
+// ------------------- GENERAL STYLES ------------------- //
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+html, body {
+  background: $background-color;
+}
+
+body {
+  color: $text-color;
+  font-family: $font-family;
+  font-size: 16px;
+  line-height: 1.4;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: $link-color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.emoji {
+  font-family: 'Noto Emoji', sans-serif;
+  font-weight: 400;
+}
+
+// ------------------- TYPOGRAPHY ------------------- //
+
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2.12rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 1.06rem;
+}
+h5 {
+  font-size: 0.75rem;
+}
+h6 {
+  font-size: 0.53rem;
+}
+
+h2, h3, h4, h5, h6 {
+  margin-top: $spacing-base * 2;
+}
+
+p, li {
+  margin: $spacing-base 0;
+  word-break: break-word;
+  hyphens: auto;
+}
+
+.post-meta {
+  text-align: right;
+}
+
+blockquote {
+  border-left: $border-thickness solid $text-color;
+  padding: $spacing-base;
+  margin: 0;
+
+  p {
+    margin: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+footer img {
+  height: 2.9ch;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+// ------------------- LAYOUT & SPACING ------------------- //
+.w {
+  max-width: $max-width;
+  margin: 0 auto;
+}
+
+.content {
+  flex: 1;
+  padding: $spacing-base;
+}
+
+footer {
+  flex-shrink: 0;
+  padding: 0 $spacing-base $spacing-base;
+}
+
+// ------------------- FORMS ------------------- //
+input, button, textarea, fieldset {
+  border: $border-thickness solid $text-color;
+  padding: $line-height;
+  margin: 0;
+  font: inherit;
+  line-height: normal;
+  width: 100%;
+}
+
+input, textarea {
+  width: calc(round(down, 100%, 1ch));
+  box-shadow: inset $shadow-width $shadow-width 0 $shadow-color;
+  transition: box-shadow $transition-time ease-in-out;
+
+  &:focus {
+    outline: none;
+    box-shadow: inset 0 0 0 $shadow-color;
+  }
+}
+
+::placeholder {
+  color: $text-color-alt;
+  opacity: 1;
+}
+
+button, input:focus, textarea:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+button {
+  text-transform: uppercase;
+  font-weight: $font-weight-medium;
+  cursor: pointer;
+  background: $background-color;
+  box-shadow: $shadow-width $shadow-width 0 $shadow-color;
+  transition: box-shadow $transition-time ease-in-out;
+
+  &:hover:not(:disabled) {
+    background: $background-color-alt;
+  }
+
+  &:active:not(:disabled) {
+    box-shadow: 0 0 0 $shadow-color;
+  }
+}
+
+// Fieldset styles
+fieldset {
+  margin-bottom: $spacing-base * 2;
+
+  legend {
+    padding: 0 $spacing-base;
+    font-weight: $font-weight-medium;
+  }
+
+  // Remove double borders when fieldsets are nested
+  fieldset {
+    margin: $spacing-base 0;
+  }
+}
+
+// Radio and checkbox styles
+input[type="radio"],
+input[type="checkbox"] {
+  width: 2ch;
+  height: 2ch;
+  margin: 0;
+  box-shadow: none;
+  cursor: pointer;
+  position: relative;
+  appearance: none;
+  border: $border-thickness solid $text-color;
+  background: $background-color;
+  vertical-align: middle;
+  margin-bottom: 0.2ch;
+
+  &:checked {
+    background: $text-color;
+
+    &::after {
+      content: '';
+      display: block;
+      background: $background-color;
+    }
+  }
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+
+  &:checked::after {
+    width: 1ch;
+    height: 1ch;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+input[type="checkbox"] {
+  &:checked::after {
+    width: 1ch;
+    height: 1ch;
+    border-left: $border-thickness solid $background-color;
+    border-bottom: $border-thickness solid $background-color;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+// ------------------- CODE & TABLES ------------------- //
+code {
+  color: $text-color;
+  background: $background-color-alt;
+  padding: calc($line-height / 8);
+}
+
+kbd {
+  color: $text-color;
+  background: $background-color-alt;
+  border: $border-thickness solid $text-color;
+  border-radius: 0.25ch;
+  padding: 0 0.5ch;
+  font-size: 0.9em;
+  box-shadow: 0 $shadow-width 0 $shadow-color;
+  transition: box-shadow $transition-time ease-in-out;
+
+  &:active {
+    box-shadow: 0 0 0 $shadow-color;
+  }
+}
+
+div.highlighter-rouge code {
+  border: $border-thickness solid $text-color;
+  display: block;
+  overflow-x: auto;
+  padding: $spacing-base;
+}
+
+pre {
+  white-space: pre;
+  overflow-x: auto;
+  margin: $line-height 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    border: $border-thickness solid $text-color;
+    padding: $line-height;
+  }
+}
+
+// ------------------- DETAILS ------------------- //
+details {
+  border: $border-thickness solid $text-color;
+  padding: 1ch;
+  margin-bottom: $line-height;
+  box-shadow: $shadow-width $shadow-width 0 $shadow-color;
+
+  summary {
+    cursor: pointer;
+  }
+
+  &[open] summary {
+    margin-bottom: $line-height;
+  }
+
+  ::marker {
+    display: inline-block;
+    content: '▶';
+    margin: 0;
+  }
+
+  &[open] ::marker {
+    content: '▼';
+  }
+
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ------------------- IFRAME ------------------- //
+iframe {
+  border: none;
+  padding: 1ch;
+  width: 100%;
+
+  &:focus {
+    outline: none;
+  }
+
+  &[allowfullscreen] {
+    display: block;
+  }
+
+  &[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+
+    &:loaded {
+      opacity: 1;
+    }
+  }
+}
+
+// ------------------- METER & PROGRESS ------------------- //
+meter, progress {
+  width: 100%;
+  height: 2ch;
+  border: $border-thickness solid $text-color;
+  background: $background-color;
+}
+
+meter {
+  &::-webkit-meter-bar {
+    background: $background-color;
+  }
+
+  &::-webkit-meter-optimum-value,
+  &::-webkit-meter-suboptimum-value,
+  &::-webkit-meter-even-less-good-value {
+    background: $text-color;
+  }
+
+  &::-moz-meter-bar {
+    background: $text-color;
+  }
+}
+
+progress {
+  &::-webkit-progress-bar {
+    background: $background-color;
+  }
+
+  &::-webkit-progress-value,
+  &::-moz-progress-bar {
+    background: $text-color;
+  }
+}
+
+// ------------------- GRID SYSTEM ------------------- //
+
+.grid {
+  display: flex;
+  gap: $grid-gap;
+  margin-bottom: $line-height;
+  width: calc(100% - ($grid-gap * (var(--grid-cells) - 1)));
+
+  > *, input {
+    flex: 0 0 calc((100% - ($grid-gap * (var(--grid-cells) - 1))) / var(--grid-cells));
+  }
+
+  @for $i from 1 through 9 {
+    &:has(> :last-child:nth-child(#{$i})) {
+      --grid-cells: #{$i};
+    }
+  }
+}
+
+// ------------------- PRINT STYLES ------------------- //
+@media print {
+  footer {
+    display: none;
+  }
+
+  body {
+    font-size: 11pt;
+    line-height: 1.3;
+  }
+
+  h1 { font-size: 18pt; }
+  h2 { font-size: 16pt; }
+  h3 { font-size: 14pt; }
+  h4, h5, h6 { font-size: 12pt; }
+}
+
+// ------------------- CARDS ------------------- //
+.card {
+  border: $border-thickness solid $text-color;
+  padding: $spacing-base;
+
+  &[href] {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    box-shadow: $shadow-width $shadow-width 0 $shadow-color;
+    transition: box-shadow $transition-time ease-in-out;
+
+    &:hover {
+      background: $background-color-alt;
+    }
+
+    &:active {
+      box-shadow: 0 0 0 $shadow-color;
+    }
+  }
+}
