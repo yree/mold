@@ -163,6 +163,17 @@ footer {
   padding: 0 $spacing-base $spacing-base;
 }
 
+hr {
+  border: none;
+  margin: 4ch auto;
+}
+
+hr::before {
+  content: "⬩ ⬩ ⬥ ⬩ ⬩";
+  text-align: center;
+  color: black
+}
+
 // ------------------- FORMS ------------------- //
 input, button, textarea, fieldset {
   border: $border-thickness solid $text-color;
