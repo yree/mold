@@ -131,10 +131,14 @@ blockquote {
 }
 
 img {
-  max-width: 100%;
+  max-width: min(100%, 80ch);
+  max-height: min(100vh, 60ch);
+  width: auto;
   height: auto;
   display: block;
-  margin: 0 auto;
+  object-fit: contain;
+  margin: 4ch auto;
+  border-radius: 2ch;
 }
 
 footer img {
