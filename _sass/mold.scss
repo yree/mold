@@ -140,6 +140,17 @@ img {
   margin: 4ch auto;
 }
 
+// ------------------- IMAGE CAPTIONS ------------------- //
+img + em {
+  display: block;
+  max-width: min(100%, 80ch);
+  margin: -2ch auto 4ch;
+  text-align: center;
+
+  font-style: normal;
+  color: $text-color-alt;
+}
+
 footer img {
   height: 2.9ch;
   display: inline-block;
