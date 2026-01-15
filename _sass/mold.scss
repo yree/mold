@@ -165,12 +165,13 @@ footer {
 hr {
   border: none;
   margin: 4ch auto;
+  max-width: 80ch;
 }
 
-hr::before {
-  content: "⬩ ⬩ ⬥ ⬩ ⬩";
-  text-align: center;
-  color: black
+hr::after {
+  content: "";
+  display: block;
+  border-top: 0.6ch double black;
 }
 
 // ------------------- FORMS ------------------- //
