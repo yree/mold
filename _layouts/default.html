@@ -43,6 +43,25 @@
         {{ content }}
       </div>
     </main>
+    <!-- Footer -->
+    <footer>
+      <div class="w footer-row">
+        <div class="footer-copy">
+          {%- if site.footer_content -%}
+            {{ site.footer_content | markdownify }}
+          {%- else -%}
+              {% if site.author %}
+                <a href="{{ site.url }}">{{ site.author }}</a> —
+              {% endif %}
+              {% if site.git_repo %}
+                <a href="https://github.com/{{ site.git_repo }}">@{{ site.git_repo }}</a> —
+              {% endif %}
+              <a href="https://yree.io/mold">molded</a> for you 🫶
+          {%- endif -%}
+        </div>
+        <button class="theme-toggle" type="button" aria-label="Toggle theme" title="toggle theme"></button>
+      </div>
+    </footer>
     <!-- Goat Counter -->
     {%-if site.goat_counter and jekyll.environment == "production"-%}
       <script data-goatcounter="https://{{ site.goat_counter }}.goatcounter.com/count"
@@ -51,21 +70,34 @@
         <img src="https://{{ site.goat_counter }}.goatcounter.com/count?p=/test-img">
       </noscript>
     {%-endif-%}
+    <script>
+      (() => {
+        const key = 'mold-appearance';
+        let appearance = localStorage.getItem(key) || '{{ site.theme_config.appearance | default: "auto" }}';
+        appearance = ({ dark: 'invert', light: 'auto' })[appearance] || appearance;
+
+        const sync = () => {
+          document.body.setAttribute('a', appearance);
+          localStorage[appearance === 'auto' ? 'removeItem' : 'setItem'](key, appearance);
+
+          const toggle = document.querySelector('.theme-toggle');
+          if (toggle) {
+            toggle.setAttribute('aria-pressed', appearance === 'invert');
+          }
+        };
+
+        document.addEventListener('click', (event) => {
+          if (!event.target.closest('.theme-toggle')) {
+            return;
+          }
+
+          appearance = appearance === 'invert' ? 'auto' : 'invert';
+          sync();
+        });
+
+        document.addEventListener('DOMContentLoaded', sync);
+        sync();
+      })();
+    </script>
   </body>
-  <!-- Footer -->
-  <footer>
-    <div class="w">
-      {%- if site.footer_content -%}
-        {{ site.footer_content | markdownify }}
-      {%- else -%}
-          {% if site.author %}
-            <a href="{{ site.url }}">{{ site.author }}</a> —
-          {% endif %}
-          {% if site.git_repo %}
-            <a href="https://github.com/{{ site.git_repo }}">@{{ site.git_repo }}</a> —
-          {% endif %}
-          <a href="https://yree.io/mold">molded</a> for you 🫶
-      {%- endif -%}
-    </div>
-  </footer>
 </html>

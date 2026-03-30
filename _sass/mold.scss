@@ -37,12 +37,14 @@ $transition-time: 0.1s;
   }
 }
 
-html[a="dark"], body[a="dark"] {
-  @include dark-appearance;
+@media (prefers-color-scheme: dark) {
+  body[a="auto"] {
+    @include dark-appearance;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  html[a="auto"], body[a="auto"] {
+@media (prefers-color-scheme: light) {
+  body[a="invert"] {
     @include dark-appearance;
   }
 }
@@ -214,6 +216,34 @@ input, textarea {
 button, input:focus, textarea:focus {
   outline: none;
   box-shadow: none;
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: $spacing-base;
+}
+
+.footer-copy {
+  min-width: 0;
+
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.theme-toggle {
+  flex: 0 0 auto;
+  width: 1.25ch;
+  height: 1.25ch;
+  background: $background-color-alt;
+  border: none;
+  padding: 0;
 }
 
 button {
