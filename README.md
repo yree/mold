@@ -7,64 +7,44 @@ Inspired from [no-style-please](https://github.com/riggraz/no-style-please) and 
 > **"Simplicity is the ultimate sophistication."**  
 > -- Leonardo da Vinci
 
-## Features ✨
+## Features
 
-- ⚡ Fast
-- 🌓 Light and dark theme
-- 📱 Responsive
-- 📖 Content-first (typography optimized for maximum readability)
-- 🔍 SEO optimized (uses Jekyll SEO Tag)
-- 📰 RSS feed (uses Jekyll Feed)
-- ➗ Mathjax support
-- 🧜 Mermaid support
+- Fast
+- Light and dark
+- Responsive
+- Content-first typography
+- SEO and RSS
+- Mathjax support
+- Mermaid support
 
-Explore all the features:
+Also see:
 
-- 🌟 [Static Land](features/static) - Journey through the structured and stable elements.
-- 🌌 [Dynamic Land](features/dynamic) - Discover the interactive elements and magical interfaces.
+- [Static Elements](features/static)
+- [Dynamic Elements](features/dynamic)
 
-## Usage 🛠
+## Usage
 
-### Setup 🏗
+Create a GitHub Pages repo and set the remote theme in `_config.yml`:
 
-- Create a github pages repo, see [steps](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site).
-- Add a `_config.yml` file (or copy the one from this repo), and insert below line:
-    ```yaml
-    remote-theme: yree/mold
-    ``` 
-- See site settings to further customize the theme.
+```yaml
+remote-theme: yree/mold
+```
 
-### Organization 📂
-- The theme operates on the WYWIWYS (wee-wee-wiz) principle.
-- The `README.md` at the repo root acts as the index for the GitHub Page.
-- To create more posts add `.md` files and folders to your repo.
-- Link these `.md` files across each other (refer to this repo structure).
+- Edit `_config.yml` to customize the site.
+- `README.md` is the home page. Add more `.md` files or folders for more pages, then link between them.
+- For dark-mode image inversion, apply `class="ioda"` to the images you want inverted.
 
-### Pro tips 💡
+## Development
 
-#### Site Settings
+For local development:
 
-- Customize your blog further by editing the `_config.yml` file.
-- Adjust the blog's name, author, theme appearance, date formatting, and more.
-- The file includes comments to guide you through each customizable field.
+- `bundle install`
+- `bundle exec jekyll serve`
+- Preview at [http://localhost:4000](http://localhost:4000)
+- Update `mold.gemspec` if you need extra bundled files or directories
 
-#### Dark Mode for Images
+Issues and pull requests at [yree/mold](https://github.com/yree/mold). Please follow the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
 
-- The theme's dark mode is achieved through CSS `invert()` function.
-- Images aren't inverted by default to maintain expected appearance.
-- Apply `class="ioda"` to specific images to force color inversion.
-
-## Development 📦
-
-- Run `bundle install` to set up your environment.
-- Start the server with `bundle exec jekyll serve`.
-- Modify your theme and content as needed, preview your theme at [http://localhost:4000](http://localhost:4000).
-- Only specific files and directories are bundled. Adjust `mold.gemspec` to include custom directories if necessary.
-
-## Contributing 🤝
-
-Feel free to report bugs or send pull requests over on GitHub at [yree/mold](https://github.com/yree/mold). Please adhere to the [Contributor Covenant](http://contributor-covenant.org/) code of conduct.
-
-## License 📃
+## License
 
 The theme is available as open source under the terms of the [MIT License](LICENSE).

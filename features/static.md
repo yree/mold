@@ -1,114 +1,115 @@
-# 🌟 The Incredible Journey into Static Land
+# Static Elements
 
-Enter the [md realm](static.md).
+This page demonstrates markdown rendering in the theme.
 
-## 🌈 Headings: The Layers of Our Adventure
+## Headings
 
-Welcome, brave explorer! Our journey through the land of Markdown is like climbing a magical mountain of knowledge. Each heading is a different level of our expedition:
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6
 
-# 🏔 H1 - The Grand Summit (Our main quest!)
-## 🏕 H2 - Base Camp (Where our strategy takes shape)
-### 🔍 H3 - Exploration Zone (Diving into details)
-#### 🛤 H4 - Secret Pathways (Hidden insights)
-##### 📜 H5 - Whispered Legends (Subtle nuances)
-###### 🪙 H6 - Tiny Treasures (Smallest discoveries)
-
-## 📝 Paragraph: The Explorer's Log
+## Paragraphs
 
 _Quisque egestas convallis ipsum, ut sollicitudin risus tincidunt._
 
-Our intrepid team navigates through treacherous terrains, mapping uncharted territories with precision and courage.
-
 **Maecenas interdum malesuada egestas.**
 
-Every step reveals new mysteries, every challenge a chance to grow.
+## Lists
 
-## 📋 Lists: Our Expedition Blueprints
+### Ordered list
 
-### 🔢 Ordered list: Mission Progression
-1. Firstly, prepare the expedition
-2. Secondly, chart the unknown
-3. Thirdly, conquer the challenge
+1. First item
+2. Second item
+3. Third item
 
-### 🔘 Unordered list: Knowledge Branches
-- Chapter of Exploration
-  - Section of Discovery
-    - Paragraph of Revelation
+### Unordered list
 
-### ✅ ToDo list: Quest Checklist
-- [ ] Complete the Markdown Expedition
-  - [x] Study the terrain
-  - [x] Gather essential tools
-  - [ ] Reach the final destination
+- Top level
+  - Nested level
+    - Nested level
 
-### 🌓 Description list: Celestial Guide
+### Task list
+
+- [ ] Incomplete item
+  - [x] Completed sub-item
+  - [x] Completed sub-item
+  - [ ] Incomplete sub-item
+
+### Description list
 
 Sun
-: 🌞 our cosmic beacon, illuminating the path of knowledge
+: Daytime example
 
 Moon
-: 🌙 the silent guardian, reflecting wisdom in the darkness
+: Nighttime example
 
-## 📌 Block Quote: Wisdom from the Ancients
+## Block quote
 
-> This line echoes the whispers of explorers past.
+> Example block quote.
 >
-> -- **The Markdown Sage**
+> -- **Source**
 
-## 🌐 Horizontal Breaks: Crossing Boundaries
+## Horizontal rule
 
 ---
 
-The journey continues beyond known horizons.
+Text after a horizontal rule.
 
-## 🖼 Images: Capturing Memories
+## Images
 
-Move while you can in the day:
+Regular image:
 ![Day Landscape](https://media.githubusercontent.com/media/yree/dump/refs/heads/main/yree/yree-cover.png)
 
-As the darkness spreads at night:
+Dark-mode inverted image:
 ![Night Landscape](https://media.githubusercontent.com/media/yree/dump/refs/heads/main/yree/yree-cover.png){:.ioda}
 
-## 📊 Tables: Expedition Log
+## Tables
 
-| 🧭 Expedition Team | 🛠 Role           | 🌟 Specialty |
-| :---------------- | :---------------- | -----------: |
-| Maria Anders      | Lead Navigator   | Cartography  |
-| Helen Bennett     | Tech Specialist  | Communication|
-| Giovanni Rovelli  | Research Lead    | Analysis     |
+| Name             | Role            | Focus         |
+| :--------------- | :-------------- | ------------: |
+| Maria Anders     | Lead Navigator  | Cartography   |
+| Helen Bennett    | Tech Specialist | Communication |
+| Giovanni Rovelli | Research Lead   | Analysis      |
 
-## 🔗 Links: Portals to New Worlds
+## Links
 
-<https://yree.io> - The secret entrance to our knowledge realm!
+<https://yree.io>
 
-## 📄 Footnote: Hidden Annotations
+## Footnotes
 
-Click the magical hook to reveal ancient scrolls[^footnote], and uncover more mysterious knowledge[^one-more].
+Footnote example[^footnote], plus another one[^one-more].
 
-## 💻 Code Blocks: Deciphering Ancient Scripts
+## Code
 
-### ✨ Inline Code: Quick Spells
-This is an example of `Magical Incantation`.
+### Inline code
 
-### 📜 Common Scroll
+This is `inline code`.
+
+### Plain text
+
 ```text
-Behold, the unadorned text of ancient wisdom!
+Plain text example.
 ```
 
-### 🧪 Specific Language Spell
+### Bash
+
 ```bash
 if [ $? -ne 0 ]; then
-  echo "The quest encountered a challenge.";
+  echo "Command failed.";
   #adapt and overcome
 fi;
 ```
 
-### ⌨ Keyboard Runes
-Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to capture knowledge, <kbd>Ctrl</kbd> + <kbd>V</kbd> to share wisdom.
+### Keyboard input
 
-## ➗ Mathematics: The Universal Language
+Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy, and <kbd>Ctrl</kbd> + <kbd>V</kbd> to paste.
 
-Powered by the mystical [**MathJax**](https://www.mathjax.org/):
+## Math
+
+Powered by [**MathJax**](https://www.mathjax.org/):
 
 $$
 \begin{equation}
@@ -116,13 +117,13 @@ $$
 \end{equation}
 $$
 
-## 🌊 Mermaid SVG: Mapping Our Journey
+## Mermaid
 
 {% include mermaid.html content="
 graph TD;
-    A[Markdown Kingdom]-->B[Static Land];
-    A-->C[Dynamic Land];"
+    A[Markdown]-->B[Static];
+    A-->C[Dynamic];"
 %}
 
-[^footnote]: The first scroll of knowledge
-[^one-more]: The second tome of wisdom
+[^footnote]: First footnote.
+[^one-more]: Second footnote.
