@@ -31,7 +31,26 @@
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const emojiRegex = /([\u{1F600}-\u{1F64F}\u{1F300}-\u{1F5FF}\u{1F680}-\u{1F6FF}\u{1F700}-\u{1F77F}\u{1F900}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{2702}\u{1F004}\u{1F0CF}\u{1F191}-\u{1F251}\u{1F1E6}-\u{1F1FF}\u{200D}\u{2620}\u{26A7}\u{FE0F}\u{1F308}\u{1F38C}\u{1F3C1}\u{1F3F3}-\u{1F3F4}\u{1F6A9}\u{E0062}-\u{E007F}\u{1FA00}-\u{1FAFF}])/gu;
-        document.body.innerHTML = document.body.innerHTML.replace(emojiRegex, '<span class="emoji">$1</span>');
+        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+        const nodes = [];
+        while (walker.nextNode()) nodes.push(walker.currentNode);
+        for (const node of nodes) {
+          const text = node.textContent;
+          if (!emojiRegex.test(text)) continue;
+          emojiRegex.lastIndex = 0;
+          const frag = document.createDocumentFragment();
+          let last = 0, match;
+          while ((match = emojiRegex.exec(text)) !== null) {
+            if (match.index > last) frag.appendChild(document.createTextNode(text.slice(last, match.index)));
+            const span = document.createElement('span');
+            span.className = 'emoji';
+            span.textContent = match[0];
+            frag.appendChild(span);
+            last = emojiRegex.lastIndex;
+          }
+          if (last < text.length) frag.appendChild(document.createTextNode(text.slice(last)));
+          node.parentNode.replaceChild(frag, node);
+        }
       });
     </script>
     {%- endunless -%}
