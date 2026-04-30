@@ -477,19 +477,13 @@ progress {
 // ------------------- GRID SYSTEM ------------------- //
 
 .grid {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   gap: $grid-gap;
   margin-bottom: $line-height;
-  width: calc(100% - ($grid-gap * (var(--grid-cells) - 1)));
 
-  > *, input {
-    flex: 0 0 calc((100% - ($grid-gap * (var(--grid-cells) - 1))) / var(--grid-cells));
-  }
-
-  @for $i from 1 through 9 {
-    &:has(> :last-child:nth-child(#{$i})) {
-      --grid-cells: #{$i};
-    }
+  input, textarea {
+    width: 100%;
   }
 }
 
