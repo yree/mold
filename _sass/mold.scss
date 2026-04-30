@@ -191,10 +191,14 @@ div.highlighter-rouge code { border: $b solid $fg; display: block; overflow-x: a
 pre { white-space: pre; overflow-x: auto; margin: $u 0; }
 
 table {
-  width: 100%;
+  display: block;
+  overflow-x: auto;
+  overflow-y: clip;
   border-collapse: collapse;
   th, td { border: $b solid $fg; padding: $u; }
 }
+
+mjx-container[display="true"], .mermaid { overflow-x: auto; overflow-y: clip; max-width: 100%; }
 
 details {
   border: $b solid $fg;
