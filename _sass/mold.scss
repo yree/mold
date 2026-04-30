@@ -200,11 +200,8 @@ details {
   border: $b solid $fg;
   padding: $u;
   margin-bottom: $u;
-  box-shadow: $sw $sw 0 $fg;
-  summary { cursor: pointer; }
-  &[open] summary { margin-bottom: $u; }
-  ::marker { display: inline-block; content: '+'; margin: 0; }
-  &[open] ::marker { content: '-'; }
+  summary { cursor: pointer; list-style: none; &::before { content: '+ '; } }
+  &[open] summary { margin-bottom: $u; &::before { content: '- '; } }
   :last-child { margin-bottom: 0; }
 }
 
