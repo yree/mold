@@ -10,29 +10,23 @@ $sbg: lightgrey;
 $sw: 0.3ch;
 $tt: 0.1s;
 
-@mixin dark {
-  background: $fg;
-  > main, > footer {
-    background: $bg;
-    filter: invert(1) hue-rotate(180deg);
-    img {
+* { box-sizing: border-box; }
+html { background: $bg; }
+
+@media (prefers-color-scheme: dark) {
+  html { background: $fg; }
+  body {
+    background: $fg;
+    > main, > footer {
+      background: $bg;
       filter: invert(1) hue-rotate(180deg);
-      &.ioda { filter: invert(0); }
+      img {
+        filter: invert(1) hue-rotate(180deg);
+        &.ioda { filter: invert(0); }
+      }
     }
   }
 }
-
-@media (prefers-color-scheme: dark) {
-  body[a="auto"] { @include dark; }
-  html:has(body[a="auto"]) { background: $fg; }
-}
-@media (prefers-color-scheme: light) {
-  body[a="invert"] { @include dark; }
-  html:has(body[a="invert"]) { background: $fg; }
-}
-
-* { box-sizing: border-box; }
-html, body { background: $bg; }
 
 body {
   color: $fg;
@@ -67,7 +61,6 @@ blockquote {
 img {
   max-width: min(100%, 80ch);
   max-height: min(100vh, 60ch);
-  width: auto; height: auto;
   display: block;
   object-fit: contain;
   margin: 4ch auto;
@@ -125,13 +118,10 @@ button {
   &:active:not(:disabled) { box-shadow: 0 0 0 $fg; }
 }
 
-.footer-row { display: flex; align-items: center; justify-content: space-between; gap: $u; }
-.footer-copy {
-  min-width: 0;
+footer .w {
   > :first-child { margin-top: 0; }
   > :last-child { margin-bottom: 0; }
 }
-.theme-toggle { flex: 0 0 auto; width: 1.25ch; height: 1.25ch; background: $sbg; border: none; padding: 0; }
 
 fieldset {
   margin-bottom: $u * 2;
@@ -173,12 +163,14 @@ input[type="checkbox"]:checked::after {
   transform: translate(-50%, -50%);
 }
 
+.task-list-item { input[type="checkbox"] { display: none; } &:has(> input:checked) { text-decoration: line-through; } }
+a.reversefootnote { font-family: monospace; font-style: normal; }
+
 code { background: $sbg; padding: calc($u / 8); }
 
 kbd {
   background: $sbg;
   border: $b solid $fg;
-  border-radius: 0.25ch;
   padding: 0 0.5ch;
   font-size: 0.9em;
   box-shadow: 0 $sw 0 $fg;
@@ -186,8 +178,8 @@ kbd {
   &:active { box-shadow: 0 0 0 $fg; }
 }
 
-div.highlighter-rouge code { border: $b solid $fg; display: block; overflow-x: auto; padding: $u; }
-pre { white-space: pre; overflow-x: auto; margin: $u 0; }
+.highlighter-rouge code { border: $b solid $fg; display: block; overflow-x: auto; padding: $u; }
+pre { overflow-x: auto; margin: $u 0; }
 
 table {
   display: block;
