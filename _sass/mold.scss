@@ -26,13 +26,18 @@ $transition-time: 0.1s;
 
 // ------------------- THEME SWITCHER ------------------- //
 @mixin dark-appearance {
-  filter: invert(1) hue-rotate(180deg);
+  background: $text-color;
 
-  img {
+  > main, > footer {
+    background: $background-color;
     filter: invert(1) hue-rotate(180deg);
 
-    &.ioda {
-      filter: invert(0);
+    img {
+      filter: invert(1) hue-rotate(180deg);
+
+      &.ioda {
+        filter: invert(0);
+      }
     }
   }
 }
@@ -41,11 +46,17 @@ $transition-time: 0.1s;
   body[a="auto"] {
     @include dark-appearance;
   }
+  html:has(body[a="auto"]) {
+    background: $text-color;
+  }
 }
 
 @media (prefers-color-scheme: light) {
   body[a="invert"] {
     @include dark-appearance;
+  }
+  html:has(body[a="invert"]) {
+    background: $text-color;
   }
 }
 
