@@ -1,18 +1,20 @@
-name: Rebuild dependent GitHub Pages sites
+name: rebuild-dependent-github-pages-sites
 
 on:
   push:
     branches: [main]
+
+  workflow_dispatch:
 
 jobs:
   trigger:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout theme repo
+      - name: checkout-theme-repo
         uses: actions/checkout@v4
 
-      - name: Trigger all dependent sites
+      - name: trigger-all-dependent-sites
         run: |
           echo "Starting fan-out rebuild..."
 
