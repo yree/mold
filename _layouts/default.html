@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
     {%- unless page.js == false or site.js == false -%}
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+    <style>mjx-container[display="true"] { overflow-x: auto; overflow-y: clip; max-width: 100%; }</style>
     <script src="https://unpkg.com/mermaid/dist/mermaid.min.js" async></script>
+    <style>.mermaid { overflow-x: auto; overflow-y: clip; max-width: 100%; }</style>
     {%- endunless -%}
   </head>
   <body>

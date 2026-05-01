@@ -1,0 +1,21 @@
+#!/bin/bash
+
+CORE_CSS="_site/assets/css/core.css"
+FULL_CSS="_site/assets/css/main.css"
+MAX_CORE=1000
+MAX_FULL=2000
+
+if [ ! -f "$FULL_CSS" ] || [ ! -f "$CORE_CSS" ]; then
+  echo "⚠️  _site not built, skipping CSS size check"
+  exit 0
+fi
+
+CORE_SIZE=$(gzip -c "$CORE_CSS" | wc -c | tr -d ' ')
+FULL_SIZE=$(gzip -c "$FULL_CSS" | wc -c | tr -d ' ')
+
+FAIL=0
+[ "$CORE_SIZE" -gt "$MAX_CORE" ] && echo "❌ Core CSS too large: ${CORE_SIZE}B gzipped (limit: ${MAX_CORE}B)" && FAIL=1
+[ "$FULL_SIZE" -gt "$MAX_FULL" ] && echo "❌ Full CSS too large: ${FULL_SIZE}B gzipped (limit: ${MAX_FULL}B)" && FAIL=1
+[ "$FAIL" -eq 0 ] && echo "✅ Core: ${CORE_SIZE}B, Full: ${FULL_SIZE}B (gzipped)"
+
+exit $FAIL

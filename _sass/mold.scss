@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Emoji:wght@300..700&display=swap');
 
 $u: 1ch;
 $b: 0.2ch;
@@ -29,9 +28,7 @@ html { background: $bg; }
 }
 
 body {
-  color: $fg;
   font-family: "JetBrains Mono", "Noto Emoji", monospace;
-  font-size: 16px;
   line-height: 1.4;
   margin: 0;
   display: flex;
@@ -39,7 +36,7 @@ body {
   min-height: 100vh;
 }
 
-a { text-decoration: none; color: blue; &:hover { text-decoration: underline; } }
+a { text-decoration: none; &:hover { text-decoration: underline; } }
 
 h1 { font-size: 3rem; }
 h2 { font-size: 2.12rem; }
@@ -49,14 +46,8 @@ h5 { font-size: 0.75rem; }
 h6 { font-size: 0.53rem; }
 h2, h3, h4, h5, h6 { margin-top: $u * 2; }
 p, li { margin: $u 0; word-break: break-word; hyphens: auto; }
-.post-meta { text-align: right; }
 
-blockquote {
-  border-left: $b solid $fg;
-  padding: $u;
-  margin: 0;
-  p { margin: 0; }
-}
+blockquote { border-left: $b solid $fg; padding: $u; margin: 0; }
 
 img {
   max-width: min(100%, 80ch);
@@ -66,120 +57,29 @@ img {
   margin: 4ch auto;
 }
 
-img + em {
-  display: block;
-  max-width: min(100%, 80ch);
-  margin: -2ch auto 4ch;
-  text-align: center;
-  font-style: normal;
-  color: $sfg;
-}
-
-footer img { height: 2.9ch; display: inline-block; vertical-align: bottom; }
+img + em { display: block; margin: -2ch auto 4ch; text-align: center; font-style: normal; color: $sfg; }
 
 .w { max-width: calc(min(80ch, round(down, 100%, 1ch))); margin: 0 auto; }
 .content { flex: 1; padding: $u; }
 footer { flex-shrink: 0; padding: 0 $u $u; }
 
-hr {
-  border: none;
-  margin: 4ch auto;
-  max-width: 80ch;
-  &::after { content: ""; display: block; border-top: 0.6ch double $fg; }
-}
-
-input, button, textarea, fieldset {
-  border: $b solid $fg;
-  padding: $u;
-  margin: 0;
-  font: inherit;
-  line-height: normal;
-  width: 100%;
-}
-
-input, textarea {
-  width: calc(round(down, 100%, 1ch));
-  box-shadow: inset $sw $sw 0 $fg;
-  transition: box-shadow $tt ease-in-out;
-}
-
-input:focus, textarea:focus { outline: none; box-shadow: none; }
-::placeholder { color: $sfg; opacity: 1; }
-
-button {
-  text-transform: uppercase;
-  font-weight: 600;
-  cursor: pointer;
-  outline: none;
-  background: $bg;
-  box-shadow: $sw $sw 0 $fg;
-  transition: box-shadow $tt ease-in-out;
-  &:hover:not(:disabled) { background: $sbg; }
-  &:active:not(:disabled) { box-shadow: 0 0 0 $fg; }
-}
-
-footer .w {
-  > :first-child { margin-top: 0; }
-  > :last-child { margin-bottom: 0; }
-}
-
-fieldset {
-  margin-bottom: $u * 2;
-  legend { padding: 0 $u; font-weight: 600; }
-  fieldset { margin: $u 0; }
-}
-
-input[type="radio"], input[type="checkbox"] {
-  width: 2ch; height: 2ch;
-  margin: 0 0 0.2ch;
-  box-shadow: none;
-  cursor: pointer;
-  position: relative;
-  appearance: none;
-  border: $b solid $fg;
-  background: $bg;
-  vertical-align: middle;
-  &:checked {
-    background: $fg;
-    &::after { content: ''; display: block; background: $bg; }
-  }
-}
-
-input[type="radio"] {
-  border-radius: 50%;
-  &:checked::after {
-    width: 1ch; height: 1ch;
-    border-radius: 50%;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-input[type="checkbox"]:checked::after {
-  width: 1ch; height: 1ch;
-  border-left: $b solid $bg;
-  border-bottom: $b solid $bg;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-}
+hr { border: none; border-top: $b solid $fg; margin: 4ch auto; max-width: 80ch; }
 
 .task-list-item { input[type="checkbox"] { display: none; } &:has(> input:checked) { text-decoration: line-through; } }
 a.reversefootnote { font-family: monospace; font-style: normal; }
 
-code { background: $sbg; padding: calc($u / 8); }
+code, pre, kbd { font-family: inherit; }
+code { background: $sbg; }
 
 kbd {
   background: $sbg;
   border: $b solid $fg;
-  padding: 0 0.5ch;
-  font-size: 0.9em;
+  padding: 0 0.25ch;
   box-shadow: 0 $sw 0 $fg;
-  transition: box-shadow $tt ease-in-out;
-  &:active { box-shadow: 0 0 0 $fg; }
 }
 
 .highlighter-rouge code { border: $b solid $fg; display: block; overflow-x: auto; padding: $u; }
-pre { overflow-x: auto; margin: $u 0; }
+pre { overflow-x: auto; }
 
 table {
   display: block;
@@ -189,71 +89,7 @@ table {
   th, td { border: $b solid $fg; padding: $u; }
 }
 
-mjx-container[display="true"], .mermaid { overflow-x: auto; overflow-y: clip; max-width: 100%; }
-
-details {
-  border: $b solid $fg;
-  padding: $u;
-  margin-bottom: $u;
-  summary { cursor: pointer; list-style: none; &::before { content: '+ '; } }
-  &[open] summary { margin-bottom: $u; &::before { content: '- '; } }
-  :last-child { margin-bottom: 0; }
-}
-
-iframe {
-  border: none;
-  padding: $u;
-  width: 100%;
-  &:focus { outline: none; }
-  &[allowfullscreen] { display: block; }
-}
-
-meter, progress {
-  width: 100%; height: 2ch;
-  border: $b solid $fg;
-  background: $bg;
-}
-meter {
-  &::-webkit-meter-bar { background: $bg; }
-  &::-webkit-meter-optimum-value,
-  &::-webkit-meter-suboptimum-value,
-  &::-webkit-meter-even-less-good-value { background: $fg; }
-  &::-moz-meter-bar { background: $fg; }
-}
-progress {
-  &::-webkit-progress-bar { background: $bg; }
-  &::-webkit-progress-value,
-  &::-moz-progress-bar { background: $fg; }
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
-  gap: $u;
-  margin-bottom: $u;
-  input, textarea { width: 100%; }
-}
-
 @media print {
   footer { display: none; }
-  body { font-size: 11pt; line-height: 1.3; }
-  h1 { font-size: 18pt; }
-  h2 { font-size: 16pt; }
-  h3 { font-size: 14pt; }
-  h4, h5, h6 { font-size: 12pt; }
-}
-
-.card {
-  border: $b solid $fg;
-  padding: $u;
-  &[href] {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    cursor: pointer;
-    box-shadow: $sw $sw 0 $fg;
-    transition: box-shadow $tt ease-in-out;
-    &:hover { background: $sbg; }
-    &:active { box-shadow: 0 0 0 $fg; }
-  }
+  html { font-size: 11pt; }
 }

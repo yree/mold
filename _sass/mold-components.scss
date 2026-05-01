@@ -1,0 +1,104 @@
+input, button, textarea, fieldset {
+  border: $b solid $fg;
+  padding: $u;
+  margin: 0;
+  font: inherit;
+  line-height: normal;
+  width: 100%;
+}
+
+input, textarea {
+  width: calc(round(down, 100%, 1ch));
+  box-shadow: inset $sw $sw 0 $fg;
+  transition: box-shadow $tt ease-in-out;
+}
+
+input:focus, textarea:focus { outline: none; box-shadow: none; }
+::placeholder { color: $sfg; }
+
+button {
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  background: $bg;
+  box-shadow: $sw $sw 0 $fg;
+  transition: box-shadow $tt ease-in-out;
+  &:hover:not(:disabled) { background: $sbg; }
+  &:active:not(:disabled) { box-shadow: 0 0 0 $fg; }
+}
+
+fieldset {
+  margin-bottom: 2ch;
+  legend { padding: 0 $u; font-weight: 600; }
+}
+
+input[type="radio"], input[type="checkbox"] {
+  width: 2ch; height: 2ch;
+  margin: 0 0 0.2ch;
+  box-shadow: none;
+  cursor: pointer;
+  position: relative;
+  appearance: none;
+  background: $bg;
+  vertical-align: middle;
+  &:checked {
+    background: $fg;
+    &::after { content: ''; display: block; background: $bg; }
+  }
+}
+
+input[type="radio"]:checked::after,
+input[type="checkbox"]:checked::after {
+  width: 1ch; height: 1ch;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input[type="radio"] { border-radius: 50%; &:checked::after { border-radius: 50%; } }
+
+input[type="checkbox"]:checked::after {
+  border-left: $b solid $bg;
+  border-bottom: $b solid $bg;
+}
+
+details {
+  border: $b solid $fg;
+  padding: $u;
+  margin-bottom: $u;
+  summary { cursor: pointer; list-style: none; &::before { content: '+ '; } }
+  &[open] summary { margin-bottom: $u; &::before { content: '- '; } }
+  :last-child { margin-bottom: 0; }
+}
+
+iframe { border: none; width: 100%; &[allowfullscreen] { display: block; } }
+
+meter, progress {
+  width: 100%; height: 2ch;
+  border: $b solid $fg;
+  background: $bg;
+  accent-color: $fg;
+}
+meter { &::-webkit-meter-bar { background: $bg; } }
+progress { &::-webkit-progress-bar { background: $bg; } }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: $u;
+  margin-bottom: $u;
+  input, textarea { width: 100%; }
+}
+
+.card {
+  border: $b solid $fg;
+  padding: $u;
+  &[href] {
+    display: block;
+    color: inherit;
+    cursor: pointer;
+    box-shadow: $sw $sw 0 $fg;
+    transition: box-shadow $tt ease-in-out;
+    &:hover { background: $sbg; }
+    &:active { box-shadow: 0 0 0 $fg; }
+  }
+}

@@ -2,3 +2,6 @@
 ---
 
 @import "mold";
+{% unless site.css == "core" %}
+@import "mold-components";
+{% endunless %}
