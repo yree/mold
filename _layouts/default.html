@@ -15,21 +15,17 @@
     {%- endunless -%}
   </head>
   <body>
-    <main class="content">
-      <div class="w">{{ content }}</div>
-    </main>
+    <main>{{ content }}</main>
     <footer>
-      <div class="w">
-        {%- if site.footer_content -%}
-          {{ site.footer_content | markdownify }}
-        {%- else -%}
-          {% if site.author %}<a href="{{ site.url }}">{{ site.author }}</a> — {% endif %}
-          {% if site.git_repo %}<a href="https://github.com/{{ site.git_repo }}">@{{ site.git_repo }}</a> — {% endif %}
-          <a href="https://yree.io/mold">molded</a> for you 🫶
-        {%- endif -%}
-      </div>
+      {%- if site.footer_content -%}
+        {{ site.footer_content | markdownify }}
+      {%- else -%}
+        {% if site.author %}<a href="{{ site.url }}">{{ site.author }}</a> — {% endif %}
+        {% if site.git_repo %}<a href="https://github.com/{{ site.git_repo }}">@{{ site.git_repo }}</a> — {% endif %}
+        <a href="https://yree.io/mold">molded</a> for you 🫶
+      {%- endif -%}
     </footer>
-    {%-if site.goat_counter and jekyll.environment == "production"-%}
+    {%-if site.goat_counter and jekyll.environment == "production" and site.js != false-%}
       <script data-goatcounter="https://{{ site.goat_counter }}.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
       <noscript><img src="https://{{ site.goat_counter }}.goatcounter.com/count?p=/test-img"></noscript>
     {%-endif-%}

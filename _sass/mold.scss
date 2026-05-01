@@ -30,7 +30,9 @@ html { background: $bg; }
 body {
   font-family: "JetBrains Mono", "Noto Emoji", monospace;
   line-height: 1.4;
-  margin: 0;
+  width: 100%;
+  max-width: calc(min(80ch, round(down, 100%, 1ch)));
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -47,7 +49,7 @@ h6 { font-size: 0.53rem; }
 h2, h3, h4, h5, h6 { margin-top: $u * 2; }
 p, li { margin: $u 0; word-break: break-word; hyphens: auto; }
 
-blockquote { border-left: $b solid $fg; padding: $u; margin: 0; }
+blockquote { border-left: $b solid $fg; padding: $u; margin: 0; p { margin: 0 $u; } }
 
 img {
   max-width: min(100%, 80ch);
@@ -59,8 +61,7 @@ img {
 
 img + em { display: block; margin: -2ch auto 4ch; text-align: center; font-style: normal; color: $sfg; }
 
-.w { max-width: calc(min(80ch, round(down, 100%, 1ch))); margin: 0 auto; }
-.content { flex: 1; padding: $u; }
+main { flex: 1; padding: $u; }
 footer { flex-shrink: 0; padding: 0 $u $u; }
 
 hr { border: none; border-top: $b solid $fg; margin: 4ch auto; max-width: 80ch; }
