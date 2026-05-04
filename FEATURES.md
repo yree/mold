@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Features
 
 [Core](#core) · [Components](#components)
@@ -142,7 +146,7 @@ These elements are part of the components bundle — loaded when `css: full` (de
 
 <nav class="grid">
     <button>Reset</button>
-    <button class="primary">Save</button>
+    <button>Save</button>
 </nav>
 
 ### Forms
@@ -158,7 +162,7 @@ These elements are part of the components bundle — loaded when `css: full` (de
 <form>
     <fieldset id="forms__input">
         <legend>Inputs</legend>
-        <div class="table rows">
+        <div>
             <p><label for="input__text">Text</label><input id="input__text" type="text" placeholder="Text input"></p>
             <p><label for="input__password">Password</label><input id="input__password" type="password" placeholder="Password"></p>
             <p><label for="input__webaddress">URL</label><input id="input__webaddress" type="url" placeholder="https://example.com"></p>
@@ -194,7 +198,7 @@ These elements are part of the components bundle — loaded when `css: full` (de
         <legend>Textarea</legend>
         <p><label for="textarea">Message</label><textarea id="textarea" rows="8" cols="48" placeholder="Write here" spellcheck="false"></textarea></p>
     </fieldset>
-    <fieldset id="forms__html5" class="table rows">
+    <fieldset id="forms__html5">
         <legend>Other inputs</legend>
         <p><label for="ic">Color</label><input type="color" id="ic" value="#000000"></p>
         <p><label for="in">Number</label><input type="number" id="in" min="0" max="10" value="5"></p>
@@ -216,6 +220,27 @@ These elements are part of the components bundle — loaded when `css: full` (de
 <summary>More information</summary>
 <p>Hidden content appears here.</p>
 </details>
+
+### Dialog
+
+<div class="grid">
+<button onclick="document.getElementById('dialog-short').showModal()">Short</button>
+<button onclick="document.getElementById('dialog-long').showModal()">Long</button>
+</div>
+
+<dialog id="dialog-short">
+<p>Short dialog.</p>
+<form method="dialog"><button>Close</button></form>
+</dialog>
+
+<dialog id="dialog-long">
+<h2>Dialog Title</h2>
+<p>This dialog contains a much longer paragraph of text to demonstrate that the maximum width is capped at 60 characters, after which content wraps to the next line rather than expanding the dialog further.</p>
+<hr>
+<p>Additional content below the rule.</p>
+<p>One more paragraph to close things out.</p>
+<form method="dialog"><button>Close</button></form>
+</dialog>
 
 ### Meters and progress
 

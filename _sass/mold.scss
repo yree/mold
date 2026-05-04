@@ -13,16 +13,13 @@ $tt: 0.1s;
 html { background: $bg; }
 
 @media (prefers-color-scheme: dark) {
-  html { background: $fg; }
-  body {
-    background: $fg;
-    > main, > footer {
-      background: $bg;
+  html, body { background: $fg; }
+  main, footer, dialog {
+    background: $bg;
+    filter: invert(1) hue-rotate(180deg);
+    img {
       filter: invert(1) hue-rotate(180deg);
-      img {
-        filter: invert(1) hue-rotate(180deg);
-        &.ioda { filter: invert(0); }
-      }
+      &.ioda { filter: invert(0); }
     }
   }
 }
@@ -46,18 +43,13 @@ h3 { font-size: 1.5rem; }
 h4 { font-size: 1.06rem; }
 h5 { font-size: 0.75rem; }
 h6 { font-size: 0.53rem; }
+h1, h2, h3, h4, h5, h6 { margin-bottom: $u; }
 h2, h3, h4, h5, h6 { margin-top: $u * 2; }
 p, li { margin: $u 0; word-break: break-word; hyphens: auto; }
 
-blockquote { border-left: $b solid $fg; padding: $u; margin: 0; p { margin: 0 $u; } }
+blockquote { border-left: $b solid $fg; padding: $u; margin: $u * 2 0; p { margin: 0 $u; } }
 
-img {
-  max-width: min(100%, 80ch);
-  max-height: min(100vh, 60ch);
-  display: block;
-  object-fit: contain;
-  margin: 4ch auto;
-}
+img { max-width: 100%; max-height: 60ch; display: block; object-fit: contain; margin: 4ch auto; }
 
 img + em { display: block; margin: -2ch auto 4ch; text-align: center; font-style: normal; color: $sfg; }
 

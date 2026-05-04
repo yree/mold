@@ -27,8 +27,10 @@ button {
   &:active:not(:disabled) { box-shadow: 0 0 0 $fg; }
 }
 
+form { display: flex; flex-direction: column; gap: $u; }
+label:has(input:not([type=checkbox],[type=radio])) { display: flex; flex-direction: column; }
+
 fieldset {
-  margin-bottom: 2ch;
   legend { padding: 0 $u; font-weight: 600; }
 }
 
@@ -68,6 +70,17 @@ details {
   summary { cursor: pointer; list-style: none; &::before { content: '+ '; } }
   &[open] summary { margin-bottom: $u; &::before { content: '- '; } }
   :last-child { margin-bottom: 0; }
+}
+
+dialog {
+  border: $b solid $fg;
+  padding: $u * 2;
+  max-width: min(100%, 60ch);
+  word-break: break-word;
+  font: inherit;
+  gap: $u;
+  &[open] { display: flex; flex-direction: column; }
+  > form { display: contents; }
 }
 
 iframe { border: none; width: 100%; &[allowfullscreen] { display: block; } }

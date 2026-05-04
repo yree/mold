@@ -17,6 +17,8 @@ Start using by adding to your GitHub Pages `_config.yml`:
 remote_theme: yree/mold
 ```
 
+Inspired by [no-style-please](https://github.com/riggraz/no-style-please) and [monospace-web](https://github.com/owickstrom/the-monospace-web).
+
 [Features →](FEATURES)  
 [User guide →](USER)  
 [Developer guide →](AGENTS)
