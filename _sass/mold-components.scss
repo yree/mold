@@ -9,7 +9,7 @@ input, button, textarea, fieldset {
 
 input, textarea {
   width: calc(round(down, 100%, 1ch));
-  box-shadow: inset $sw $sw 0 $fg;
+  box-shadow: inset 0 $sw 0 $fg;
   transition: box-shadow $tt ease-in-out;
 }
 
@@ -21,7 +21,7 @@ button {
   font-weight: 600;
   cursor: pointer;
   background: $bg;
-  box-shadow: $sw $sw 0 $fg;
+  box-shadow: 0 $sw 0 $fg;
   transition: box-shadow $tt ease-in-out;
   &:hover:not(:disabled) { background: $sbg; }
   &:active:not(:disabled) { box-shadow: 0 0 0 $fg; }
@@ -109,7 +109,7 @@ progress { &::-webkit-progress-bar { background: $bg; } }
     display: block;
     color: inherit;
     cursor: pointer;
-    box-shadow: $sw $sw 0 $fg;
+    box-shadow: 0 $sw 0 $fg;
     transition: box-shadow $tt ease-in-out;
     &:hover { background: $sbg; }
     &:active { box-shadow: 0 0 0 $fg; }
