@@ -1,4 +1,4 @@
-input, button, textarea, fieldset {
+input, button, textarea, fieldset, select {
   border: $b solid $fg;
   padding: $u;
   margin: 0;
@@ -27,12 +27,20 @@ button {
   &:active:not(:disabled) { box-shadow: 0 0 0 $fg; }
 }
 
-form { display: flex; flex-direction: column; gap: $u; }
+form { display: flex; flex-direction: column; gap: $u; margin: $u 0; }
 label:has(input:not([type=checkbox],[type=radio])) { display: flex; flex-direction: column; }
 
 fieldset {
   legend { padding: 0 $u; font-weight: 600; }
+  > label { display: block; }
 }
+
+input[type="color"], input[type="range"] { box-shadow: none; padding: 0; }
+input[type="range"] { border: none; }
+
+fieldset ul { list-style: none; padding: 0; margin: 0; }
+
+label:has(meter), label:has(progress) { display: block; margin-bottom: $b; }
 
 input[type="radio"], input[type="checkbox"] {
   width: 2ch; height: 2ch;
@@ -66,7 +74,7 @@ input[type="checkbox"]:checked::after {
 details {
   border: $b solid $fg;
   padding: $u;
-  margin-bottom: $u;
+  margin: $u 0;
   summary { cursor: pointer; list-style: none; &::before { content: '+ '; } }
   &[open] summary { margin-bottom: $u; &::before { content: '- '; } }
   :last-child { margin-bottom: 0; }
