@@ -89,7 +89,11 @@ dialog {
   gap: $u;
   &[open] { display: flex; flex-direction: column; }
   > form { display: contents; }
+  hr { margin: 0; }
+  > :first-child, > form > :first-child { margin-top: 0; }
 }
+
+button:focus-visible { outline: $b solid $fg; outline-offset: $b; }
 
 iframe { border: none; width: 100%; &[allowfullscreen] { display: block; } }
 
