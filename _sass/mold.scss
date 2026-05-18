@@ -27,7 +27,6 @@ html { background: $bg; }
 body {
   font-family: "JetBrains Mono", "Noto Emoji", monospace;
   line-height: 1.4;
-  width: 100%;
   max-width: calc(min(80ch, round(down, 100%, 1ch)));
   margin: 0 auto;
   display: flex;
@@ -37,15 +36,16 @@ body {
 
 a { text-decoration: none; &:hover { text-decoration: underline; } }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2.12rem; }
-h3 { font-size: 1.5rem; }
-h4 { font-size: 1.06rem; }
-h5 { font-size: 0.75rem; }
-h6 { font-size: 0.53rem; }
-h1, h2, h3, h4, h5, h6 { margin-bottom: $u; }
-h2, h3, h4, h5, h6 { margin-top: $u * 2; }
-p, li { margin: $u 0; word-break: break-word; hyphens: auto; }
+h1, h2, h3, h4, h5, h6 { font-size: 1rem; font-weight: 700; margin: $u 0; }
+h2, h3 { margin-top: $u * 2; }
+h4, h5, h6 { font-weight: normal; }
+h1, h2 { width: fit-content; max-width: 100%; position: relative; overflow: hidden; padding-bottom: 1lh; }
+h1::after, h2::after { position: absolute; bottom: 0; left: 0; white-space: nowrap; }
+h1::after { content: '================================================================================'; }
+h2::after { content: '--------------------------------------------------------------------------------'; }
+p { margin: $u 0; }
+p, li { word-break: break-word; hyphens: auto; }
+ul { list-style-type: '- '; padding-left: 2ch; }
 
 blockquote { border-left: $b solid $fg; padding: $u; margin: $u * 2 0; p { margin: 0 $u; } }
 
@@ -56,10 +56,9 @@ img + em { display: block; margin: -2ch auto 4ch; text-align: center; font-style
 main { flex: 1; padding: $u; }
 footer { flex-shrink: 0; padding: 0 $u $u; }
 
-hr { border: none; border-top: $b solid $fg; margin: 4ch auto; max-width: 80ch; }
+hr { border: none; margin: 4ch 0; overflow: hidden; color: $fg; &::before { content: '--------------------------------------------------------------------------------'; display: block; white-space: nowrap; } }
 
 .task-list-item { input[type="checkbox"] { display: none; } &:has(> input:checked) { text-decoration: line-through; } }
-a.reversefootnote { font-family: monospace; font-style: normal; }
 
 code, pre, kbd { font-family: inherit; }
 code { background: $sbg; }

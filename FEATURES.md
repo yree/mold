@@ -15,9 +15,6 @@ Everything in this section is part of the core CSS bundle — typography, layout
 # H1
 ## H2
 ### H3
-#### H4
-##### H5
-###### H6
 
 ### Paragraphs
 
