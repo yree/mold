@@ -14,7 +14,7 @@
     <style>.mermaid { overflow-x: auto; overflow-y: clip; max-width: 100%; }</style>
     {%- endunless -%}
   </head>
-  <body>
+  <body{% if page.width %} style="--page-w: {{ page.width }}ch"{% endif %}>
     <main>{{ content }}</main>
     <footer>
       {%- if site.footer_content -%}

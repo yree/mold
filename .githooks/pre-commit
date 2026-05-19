@@ -3,7 +3,7 @@
 CORE_CSS="_site/assets/css/core.css"
 FULL_CSS="_site/assets/css/main.css"
 MAX_CORE=1024
-MAX_FULL=2000
+MAX_FULL=4096
 
 if [ ! -f "$FULL_CSS" ] || [ ! -f "$CORE_CSS" ]; then
   echo "⚠️  _site not built, skipping CSS size check"

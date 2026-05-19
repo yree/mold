@@ -8,13 +8,20 @@ $bg: white;
 $sbg: lightgrey;
 $sw: 0.3ch;
 $tt: 0.1s;
+$page-w: 80;
+
+@function rep($c, $n) {
+  $s: '';
+  @for $i from 1 through $n { $s: $s + $c; }
+  @return $s;
+}
 
 * { box-sizing: border-box; }
 html { background: $bg; }
 
 @media (prefers-color-scheme: dark) {
   html, body { background: $fg; }
-  main, footer, dialog {
+  main, footer {
     background: $bg;
     filter: invert(1) hue-rotate(180deg);
     img {
@@ -25,9 +32,10 @@ html { background: $bg; }
 }
 
 body {
+  --page-w: #{$page-w}ch;
   font-family: "JetBrains Mono", "Noto Emoji", monospace;
   line-height: 1.4;
-  max-width: calc(min(80ch, round(down, 100%, 1ch)));
+  max-width: calc(min(var(--page-w), round(down, 100%, 1ch)));
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -36,27 +44,27 @@ body {
 
 a { text-decoration: none; &:hover { text-decoration: underline; } }
 
-h1, h2, h3, h4, h5, h6 { font-size: 1rem; font-weight: 700; margin: $u 0; }
+h1, h2, h3, h4, h5, h6 { font-size: 1em; font-weight: 700; margin: $u 0; }
 h2, h3 { margin-top: $u * 2; }
 h4, h5, h6 { font-weight: normal; }
-h1, h2 { width: fit-content; max-width: 100%; position: relative; overflow: hidden; padding-bottom: 1lh; }
+h1, h2 { width: fit-content; max-width: 100%; position: relative; overflow: hidden; padding-bottom: 2ch; }
 h1::after, h2::after { position: absolute; bottom: 0; left: 0; white-space: nowrap; }
-h1::after { content: '================================================================================'; }
-h2::after { content: '--------------------------------------------------------------------------------'; }
+h1::after { content: rep('=', $page-w); }
+h2::after { content: rep('-', $page-w); }
 p { margin: $u 0; }
 p, li { word-break: break-word; hyphens: auto; }
 ul { list-style-type: '- '; padding-left: 2ch; }
 
 blockquote { border-left: $b solid $fg; padding: $u; margin: $u * 2 0; p { margin: 0 $u; } }
 
-img { max-width: 100%; max-height: 60ch; display: block; object-fit: contain; margin: 4ch auto; }
+img { max-width: 100%; max-height: 60ch; display: block; object-fit: contain; margin: 1ch auto; }
 
-img + em { display: block; margin: -2ch auto 4ch; text-align: center; font-style: normal; color: $sfg; }
+img + em { display: block; margin: 0 auto $u; text-align: center; font-style: normal; color: $sfg; }
 
 main { flex: 1; padding: $u; }
 footer { flex-shrink: 0; padding: 0 $u $u; }
 
-hr { border: none; margin: 4ch 0; overflow: hidden; color: $fg; &::before { content: '--------------------------------------------------------------------------------'; display: block; white-space: nowrap; } }
+hr { border: none; margin: 4ch 0; overflow: hidden; color: $fg; &::before { content: rep('-', $page-w); display: block; white-space: nowrap; } }
 
 .task-list-item { input[type="checkbox"] { display: none; } &:has(> input:checked) { text-decoration: line-through; } }
 
@@ -75,13 +83,9 @@ pre { overflow-x: auto; }
 
 table {
   display: block;
-  overflow-x: auto;
-  overflow-y: clip;
+  overflow: auto clip;
   border-collapse: collapse;
   th, td { border: $b solid $fg; padding: $u; }
 }
 
-@media print {
-  footer { display: none; }
-  html { font-size: 11pt; }
-}
+@media print { footer { display: none; } }
