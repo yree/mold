@@ -1,0 +1,19 @@
+---
+permalink: /llms.txt
+---
+# {{ site.title }}
+{% if site.description %}
+> {{ site.description }}
+{% endif %}
+{% if site.author or site.url %}
+## About
+{% if site.author %}- Author: {{ site.author }}
+{% endif %}{% if site.email %}- Email: {{ site.email }}
+{% endif %}{% if site.url %}- URL: {{ site.url }}{{ site.baseurl }}
+{% endif %}{% endif %}
+## Pages
+{% for page in site.pages %}{% if page.title and page.url != "/llms.txt" %}- [{{ page.title }}]({{ page.url | absolute_url }})
+{% endif %}{% endfor %}
+{% if site.posts.size > 0 %}## Posts
+{% for post in site.posts %}- [{{ post.title }}]({{ post.url | absolute_url }})
+{% endfor %}{% endif %}

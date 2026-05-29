@@ -1,0 +1,8 @@
+---
+---
+User-agent: *
+{% if site.crawlers == "allow" %}Allow: /
+{% if site.url %}
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml
+{% endif %}{% else %}Disallow: /
+{% endif %}

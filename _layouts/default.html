@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ page.title | default: site.title }}</title>
     {%-feed_meta-%}
+    {%-seo-%}
     <link rel="icon" type="image/x-icon" href="{{ site.favicon | relative_url }}" />
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}" />
     {%- unless page.js == false or site.js == false -%}

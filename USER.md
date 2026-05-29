@@ -32,6 +32,7 @@ The defaults are sensible — most sites only need `title` and `remote_theme`. E
 | `goat_counter` | — | [GoatCounter](https://www.goatcounter.com) account name, production only |
 | `css` | `full` | Set `core` for typography only — under 1KB gzipped |
 | `js` | `true` | Set `false` to disable all JavaScript globally — MathJax, Mermaid, and analytics |
+| `crawlers` | — | Set `allow` to permit search and AI crawlers; also injects sitemap URL into `robots.txt` |
 
 ## Dark mode
 

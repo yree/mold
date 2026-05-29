@@ -9,9 +9,10 @@ Gem::Specification.new do |spec|
   spec.summary       = "A minimal, optimized, lightweight design for static sites."
   spec.homepage      = "https://github.com/yree/mold"
   spec.license       = "MIT"
-  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(_layouts|_sass|assets|LICENSE|README|_config\.yml)!i) }
+  spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(_layouts|_sass|assets|LICENSE|README|_config\.yml|robots\.txt|llms\.txt)!i) }
 
   spec.add_runtime_dependency "jekyll", "~> 3.9.0"
   spec.add_runtime_dependency "jekyll-feed", "~> 0.15.1"
   spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.7.1"
+  spec.add_runtime_dependency "jekyll-sitemap", "~> 1.4"
 end
