@@ -1,7 +1,3 @@
----
-layout: default
----
-
 # Tests
 
 ## Heading spacing
