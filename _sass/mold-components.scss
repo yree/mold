@@ -111,7 +111,7 @@ progress::-moz-progress-bar { background: $_filled; }
 
 .scroll { overflow-y: auto; max-height: var(--scroll-h, 10ch); align-self: stretch; }
 
-.flex > .scroll { max-height: none; }
+.flex:has(> :not(.scroll)) > .scroll { contain: size; max-height: none; }
 
 .tabs {
   border: $b solid $fg;

@@ -38,11 +38,7 @@ The defaults are sensible — most sites only need `title` and `remote_theme`. E
 
 Dark mode follows your system preference automatically — no toggle, no configuration needed.
 
-Images keep their natural colors in dark mode by default. Use `.ioda` on images that should invert — screenshots, diagrams, anything with a white background that looks better dark:
-
-```markdown
-![Diagram](diagram.png){:.ioda}
-```
+SVG and PNG images invert in dark mode — logos, icons, and diagrams adapt automatically. All other formats (JPEG, AVIF, WebP) stay as-is. Use the right format and dark mode takes care of itself: JPEG for photos, SVG for logos, PNG for diagrams and screenshots.
 
 ## RSS and SEO
 

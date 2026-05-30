@@ -58,7 +58,7 @@ Dark mode applies `filter: invert(1) hue-rotate(180deg)` to `main` and `footer`.
 - `hue-rotate(180deg)` cancels that hue shift, so colors are preserved while luminosity is flipped
 - No separate dark mode color variables are needed
 
-Images are counter-inverted by default to keep their natural colors. Adding `.ioda` to an image removes the counter-inversion, so it inverts with the page — useful for screenshots and diagrams with white backgrounds.
+Images handle dark mode automatically by format: JPEG/AVIF/WebP are counter-inverted so photos stay natural; SVG/PNG are not counter-inverted so they invert with the page — logos, icons, and diagrams on transparent backgrounds flip correctly without any class needed. The format choice is the intent: use JPEG for photos, SVG/PNG for graphics.
 
 ### Constraints
 
