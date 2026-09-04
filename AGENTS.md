@@ -18,11 +18,11 @@ Preview at [http://localhost:4000](http://localhost:4000).
 The default layout lives in `_layouts/default.html`. It renders:
 
 - `<head>` — charset, viewport, SEO tags (via `jekyll-seo-tag`), favicon, and the CSS bundle
-- `<body>` — a flex column with `<main>` and `<footer>`, constrained to `80ch` max-width via `body`
+- `<body>` — a flex column with `<main>` and `<footer>`, constrained to `75ch` max-width via `body`
 - MathJax and Mermaid scripts, conditionally loaded based on `js` config or front matter
 - GoatCounter analytics script, conditionally loaded in production
 
-`body` carries the `80ch` max-width and `margin: 0 auto` so `main` and `footer` fill it naturally. `main` grows to fill the viewport height via `flex: 1`.
+`body` carries the `75ch` max-width and `margin: 0 auto` so `main` and `footer` fill it naturally. `main` grows to fill the viewport height via `flex: 1`.
 
 ## CSS
 
