@@ -97,12 +97,12 @@ Mermaid diagrams are included via `_includes/mermaid.html`:
 
 ### Fonts
 
-Fonts are loaded from Google Fonts CDN:
+Fonts are loaded via two `@import url(...)` lines in `_sass/mold.scss`:
 
-- **JetBrains Mono** — primary typeface, variable weight (100–800), italic support
-- **Noto Emoji** — emoji fallback, variable weight
+- **Fira Code 6.2.0** — primary typeface, weights 300–700, no true italic (browser synthesizes oblique) — via jsDelivr (`firacode@6.2.0`, the latest upstream release)
+- **Noto Emoji** — emoji fallback — via Google Fonts
 
-Both are declared in `_sass/mold.scss` via a single `@import url(...)`. All elements use `font-family: inherit` to avoid browser monospace scaling (Chrome and Safari default monospace to 13px instead of 16px).
+All elements use `font-family: inherit` to avoid browser monospace scaling (Chrome and Safari default monospace to 13px instead of 16px).
 
 ### Emoji
 

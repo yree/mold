@@ -35,7 +35,7 @@ sequenceDiagram
     Browser->>Jekyll: build request
     Jekyll->>Browser: HTML
     Browser->>CDN: load fonts
-    CDN->>Browser: JetBrains Mono;"
+    CDN->>Browser: Fira Code;"
 %}
 
 ### State diagram

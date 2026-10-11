@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Noto+Emoji:wght@300..700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Emoji&display=swap');
 
 $u: 1ch;
 $b: 0.2ch;
@@ -31,7 +32,7 @@ html { background: $bg; }
 
 body {
   --page-w: #{$page-w}ch;
-  font-family: "JetBrains Mono", "Noto Emoji", monospace;
+  font-family: "Fira Code", "Noto Emoji", monospace;
   line-height: 1.4;
   max-width: calc(min(var(--page-w), round(down, 100%, 1ch)));
   margin: 0 auto;
@@ -64,7 +65,7 @@ footer { flex-shrink: 0; padding: 0 $u $u; }
 
 hr { border: none; margin: $u 0; overflow: hidden; color: $fg; &::before { content: rep('-', 120); display: block; white-space: nowrap; } }
 
-.reversefootnote { font-family: "JetBrains Mono", monospace; }
+.reversefootnote { font-family: "Fira Code", monospace; }
 .task-list-item { input[type="checkbox"] { display: none; } &:has(> input:checked) { text-decoration: line-through; } }
 
 code, pre, kbd { font-family: inherit; }
