@@ -52,13 +52,15 @@ All sizing, color, and timing is driven by these variables:
 
 ### Dark mode
 
-Dark mode applies `filter: invert(1) hue-rotate(180deg)` to `main` and `footer`.
+Dark mode applies `filter: invert(1) hue-rotate(180deg) saturate(.8) brightness(.8)` to `main` and `footer`.
 
 - `invert(1)` flips light to dark — but it also shifts all hues by 180°
 - `hue-rotate(180deg)` cancels that hue shift, so colors are preserved while luminosity is flipped
+- `saturate(.8)` slightly softens vivid colors; it also desaturates images and other colored content
+- `brightness(.8)` softens the inverted whites
 - No separate dark mode color variables are needed
 
-Images handle dark mode automatically by format: JPEG/AVIF/WebP are counter-inverted so photos stay natural; SVG/PNG are not counter-inverted so they invert with the page — logos, icons, and diagrams on transparent backgrounds flip correctly without any class needed. The format choice is the intent: use JPEG for photos, SVG/PNG for graphics.
+Images handle dark mode automatically by format: JPEG/AVIF/WebP are counter-inverted so photos stay natural; SVG/PNG are not counter-inverted so they invert with the page — logos, icons, and diagrams on transparent backgrounds flip correctly without any class needed. The format choice is the intent: use JPEG for photos, SVG/PNG for graphics. Because the ancestor filter runs after the image's own, images are also dimmed by the `.8` brightness — intentional, and consistent with dark-theme guidance to reduce imagery luminance.
 
 ### Constraints
 

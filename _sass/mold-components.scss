@@ -55,7 +55,7 @@ details { margin: $u 0;
 }
 
 @media (prefers-color-scheme: dark) {
-  dialog { background: white; filter: invert(1) hue-rotate(180deg);
+  dialog { background: white; filter: invert(1) hue-rotate(180deg) saturate(.8) brightness(.8);
     img { filter: invert(1) hue-rotate(180deg); }
     img[src$=".svg"], img[src$=".png"] { filter: invert(0); }
   }

@@ -18,7 +18,7 @@ html { background: $bg; }
   html, body { background: $fg; }
   main, footer {
     background: $bg;
-    filter: invert(1) hue-rotate(180deg);
+    filter: invert(1) hue-rotate(180deg) saturate(.8) brightness(.8);
     img { filter: invert(1) hue-rotate(180deg); }
     img[src$=".svg"], img[src$=".png"] { filter: invert(0); }
   }

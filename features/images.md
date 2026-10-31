@@ -6,10 +6,11 @@ The theme adapts to the user's system preference automatically — no toggle, no
 
 ## Photographs
 
-JPEG, AVIF, and WebP images are not inverted in dark mode. They appear exactly as they would in light — colours and contrast stay true.
+JPEG, AVIF, and WebP images are not inverted in dark mode — colours and hue stay true. They are dimmed so they sit on the black page without glaring.
 
-![Landscape](https://media.githubusercontent.com/media/yree/dump/refs/heads/main/yree/yree-cover.png)
-*Toggle your system dark mode — this photo is unchanged*
+<!-- Photo: PublicDomainPictures.net, CC0 -->
+![Tree]({{ '/assets/images/tree.jpg' | relative_url }})
+*Toggle your system dark mode — colours preserved, image dimmed*
 
 ## Graphics
 
