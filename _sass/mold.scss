@@ -8,13 +8,8 @@ $bg: white;
 $sbg: lightgrey;
 $sw: 0.3ch;
 $tt: 0.1s;
-$page-w: 75;
-
-@function rep($c, $n) {
-  $s: '';
-  @for $i from 1 through $n { $s: $s + $c; }
-  @return $s;
-}
+$page-w: 81;
+$page-gutter: unquote("clamp(1ch, calc(5% - 1ch), 3ch)");
 
 * { box-sizing: border-box; }
 html { background: $bg; }
@@ -32,7 +27,7 @@ html { background: $bg; }
 body {
   --page-w: #{$page-w}ch;
   font-family: "JetBrains Mono", "Noto Emoji", monospace;
-  line-height: 1.4;
+  line-height: 3ch;
   max-width: calc(min(var(--page-w), round(down, 100%, 1ch)));
   margin: 0 auto;
   display: flex;
@@ -42,14 +37,11 @@ body {
 
 a { text-decoration: none; &:hover { text-decoration: underline; } }
 
-h1, h2, h3, h4, h5, h6 { font-size: 1em; font-weight: bold; margin: $u 0; }
-h2, h3 { margin-top: $u * 2; }
-h4, h5, h6 { font-weight: normal; }
-h1, h2 { width: fit-content; max-width: 100%; position: relative; overflow: hidden; padding-bottom: 2ch; }
-h1::after, h2::after { position: absolute; bottom: 0; left: 0; white-space: nowrap; }
-h1::after { content: rep('=', 120); }
-h2::after { content: rep('-', 120); }
-p { margin: $u 0; }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.666667em; }
+h3 { font-size: 1.333333em; }
+h4, h5, h6 { font-size: 1em; }
 p, li { word-break: break-word; hyphens: auto; }
 ul { list-style-type: '- '; padding-left: 2ch; }
 
@@ -59,10 +51,10 @@ img { max-width: 100%; max-height: 60ch; display: block; margin: 1ch auto; }
 
 img + em { display: block; margin: 0 auto $u; text-align: center; font-weight: lighter; }
 
-main { flex: 1; padding: $u; }
-footer { flex-shrink: 0; padding: 0 $u $u; }
+main { flex: 1; padding: $u $page-gutter; }
+footer { flex-shrink: 0; padding: 0 $page-gutter $u; }
 
-hr { border: none; margin: $u 0; overflow: hidden; color: $fg; &::before { content: rep('-', 120); display: block; white-space: nowrap; } }
+hr { border: none; border-top: $b solid $fg; margin: $u * 2 0; }
 
 .reversefootnote { font-family: "JetBrains Mono", monospace; }
 .task-list-item { input[type="checkbox"] { display: none; } &:has(> input:checked) { text-decoration: line-through; } }
@@ -77,7 +69,7 @@ kbd {
   box-shadow: 0 $sw 0 $fg;
 }
 
-.highlighter-rouge code { border: $b solid $fg; display: block; overflow-x: auto; padding: $u; }
+.highlighter-rouge code { display: block; overflow-x: auto; padding: $u; }
 pre { overflow-x: auto; }
 
 table {

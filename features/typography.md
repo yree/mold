@@ -4,7 +4,7 @@ A page's headings are its table of contents made visible. Three levels is almost
 
 ## The hierarchy
 
-H1 is the page title — one per page. H2 marks major sections, underlined and hard to miss. H3 is a quieter subdivision, bold but without the bar.
+H1 is the page title — one per page. H2 marks major sections, larger and bold. H3 is a quieter subdivision, smaller but still bold.
 
 ### H3 is where you stop
 
